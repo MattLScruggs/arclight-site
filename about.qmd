@@ -2,8 +2,6 @@
 title: "About"
 ---
 
-About this site
+The Arclight package is a package for AMR surveillance.
 
-```{r}
-1 + 1
-```
+This package is designed and maintained by Matt Scruggs, an epidemiologist and data science professional passionate about solving humanity's toughest problems with our best technology.
