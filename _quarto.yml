@@ -5,15 +5,18 @@ website:
   title: "Arclight"
   navbar:
     left:
-      - href: index.qmd
-        text: Home
+      - text: Home
+        href: index.qmd
+      - text: Projects
+        href: projects.qmd
+    right:
       - about.qmd
+      - icon: github
+        href: https://www.linkedin.com/in/learnaboutmattscruggs/
 
 format:
   html:
-    theme:
-      - cosmo
-      - brand
+    theme: cosmo
     css: styles.css
     toc: true
 
