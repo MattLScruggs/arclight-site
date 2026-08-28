@@ -2,21 +2,28 @@ project:
   type: website
 
 website:
-  title: "Arclight"
   navbar:
+    logo: images/arclight-logo.jpg
     left:
       - text: Home
         href: index.qmd
-      - text: What is Arclight?
+      - text: How Arclight Works
         href: projects.qmd
+      - text: Development Schedule
+        href: schedule.qmd
     right:
-      - about.qmd
-      - icon: github
+      - text: About
+        href: about.qmd
+      - icon: linkedin
         href: https://www.linkedin.com/in/learnaboutmattscruggs/
+      - icon: github
+        href: https://github.com/MattLScruggs
+      - icon: person-vcard
+        href: https://mattscruggs.com
 
 format:
   html:
-    theme: cosmo
+    theme: lumen
     css: styles.css
     toc: true
 

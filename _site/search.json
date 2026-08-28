@@ -9,8 +9,8 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "About the Developer",
     "section": "",
-    "text": "The Arclight package is a package for AMR surveillance.\nThis package is designed and maintained by Matt Scruggs, an epidemiologist and data science professional passionate about solving humanity’s toughest problems with our best technology."
+    "text": "Hi, I’m Matt Scruggs, designer and maintainer of the Arclight engine. I’m an epidemiologist and data science professional passionate about solving humanity’s toughest problems with our best technology.\nIn my 20 years of data science experience, I’ve designed solutions for the automotive, consumer retail, insurance, banking, pharmaceutical, and healthcare industries, and worked with C-level executives to turn strategic imperatives into operational tools and capabilities.\nComplex domains and regulatory environments are familiar territory. I’ve built several teams and data science departments from the ground up, focusing on scrappy, high-ROI solutions to prove value, which turn into polished and reliable enterprise assets.\nI hold a Master of Science in Data Analytics, a Master of Public Health, and Post-Graduate Certifications in Machine Learning and Epidemiology."
   }
 ]

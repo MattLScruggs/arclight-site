@@ -1,5 +1,4 @@
 ---
-title: "What is Arclight?"
+title: "About Arclight"
 format: html
 ---
-
