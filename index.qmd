@@ -1,5 +1,10 @@
 ---
-title: "Arclight"
+title: "Welcome to the Arclight R Package"
+image: images/SnowMap_Points.png
+about:
+  template: jolla
+  image-width: 75%
+  image-shape: rectangle
 ---
 
 This is a Quarto website.
