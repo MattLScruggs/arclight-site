@@ -1,5 +1,5 @@
 ---
-title: "Welcome to the Arclight R Package"
+title: "Welcome to the Arclight Project"
 image: images/SnowMap_Points.png
 about:
   template: jolla
@@ -7,6 +7,6 @@ about:
   image-shape: rectangle
 ---
 
-This is a Quarto website.
+Arclight is an open-source eco-epidemiology engine designed for use by public health officials, epidemiologists, clinicians, and academic researchers exploring the potential for infectious disease outbreaks in novel populations and locations.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+Disease risk is a dynamic state space governed by environmental physics, molecular evolution, and transmission networks. The Arclight engine provides proactive epidemiological intelligence by mapping the emergence probability landscape within this phase space.
