@@ -1,5 +1,26 @@
 ---
-title: "schedule"
+title: "The Arclight Project Roadmap"
 format: html
 ---
 
+### Phase 0: Cloud Infrastructure & MLOps
+* [x] **Compute Provisioning:** Deploy an elastic Google Cloud Platform (GCP) Ubuntu Virtual Machine to decouple heavy spatial raster computations from local hardware constraints.
+* [x] **Secure Reverse Proxy:** Configure Nginx with Let's Encrypt SSL/TLS certificates to route encrypted HTTPS traffic (Port 443) to internal daemon ports, ensuring zero direct public port exposure.
+* [x] **Remote Development Environment:** Install RStudio Server bound exclusively to localhost (127.0.0.1) and establish Ed25519 SSH cryptographic keypairs for secure, passwordless GitHub repository tracking.
+
+### Phase 1: Abiotic Manifold Foundation (Geospatial Pipeline)
+
+- [x] **Automated Data Ingestion:** Programmatic API ingestion of ERA5/WorldClim rasters and GBIF soil isolation coordinates via `rentrez`, `geodata`, and `sf` spatial joins.
+- [ ] **Memory Management:** Implement disk-backed C++ pointers via `terra` for memory-safe multi-decadal raster manipulation.
+- [ ] **Spatial Computation:** Calculate spatial gradients ($\nabla E$) and temporal trends ($\partial E / \partial t$) to output Climate Niche Velocity.
+
+### Phase 2: Genomic Adaptation (Phylodynamic Synthesis)
+
+- [ ] **Sequence Ingestion:** Automate querying of NCBI Entrez API for *Coccidioides* sequence accessions.
+- [ ] **Distance Matrices:** Compute pairwise genetic distances ($D_{\text{gen}}$) using sequence alignment algorithms.
+- [ ] **Cross-Domain Synthesis:** Perform spatial regression mapping genetic divergence against local environmental temperature anomalies.
+
+### Phase 3: Decision-Support Delivery
+
+- [ ] **Production Safeguards:** Finalize `testthat` unit testing suite for automated pipeline data validation.
+- [ ] **Executive Interface:** Deploy the interactive Leaflet/Shiny risk console for localized clinical diagnostic alerts.

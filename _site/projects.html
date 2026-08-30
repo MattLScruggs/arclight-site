@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About Arclight</title>
+<title>The Arclight Surveillance Architecture</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -33,6 +33,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./images/arclight-logo.jpg" rel="icon" type="image/jpeg">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -70,7 +71,39 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -103,7 +136,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./schedule.html"> 
-<span class="menu-text">Development Schedule</span></a>
+<span class="menu-text">Project Roadmap</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -137,15 +170,31 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#operational-problem-domain-gap" id="toc-operational-problem-domain-gap" class="nav-link active" data-scroll-target="#operational-problem-domain-gap">1. Operational Problem &amp; Domain Gap</a></li>
+  <li><a href="#system-architecture-ingestion-topology" id="toc-system-architecture-ingestion-topology" class="nav-link" data-scroll-target="#system-architecture-ingestion-topology">2. System Architecture &amp; Ingestion Topology</a></li>
+  <li><a href="#technical-methodology-implementation" id="toc-technical-methodology-implementation" class="nav-link" data-scroll-target="#technical-methodology-implementation">3. Technical Methodology &amp; Implementation</a>
+  <ul class="collapse">
+  <li><a href="#phase-1-abiotic-manifold-foundation" id="toc-phase-1-abiotic-manifold-foundation" class="nav-link" data-scroll-target="#phase-1-abiotic-manifold-foundation">Phase 1: Abiotic Manifold Foundation</a></li>
+  <li><a href="#theoretical-framework" id="toc-theoretical-framework" class="nav-link" data-scroll-target="#theoretical-framework">Theoretical Framework</a></li>
+  <li><a href="#phase-2-genomic-adaptation" id="toc-phase-2-genomic-adaptation" class="nav-link" data-scroll-target="#phase-2-genomic-adaptation">Phase 2: Genomic Adaptation</a></li>
+  <li><a href="#theoretical-framework-1" id="toc-theoretical-framework-1" class="nav-link" data-scroll-target="#theoretical-framework-1">Theoretical Framework</a></li>
+  <li><a href="#phase-3-decision-support-delivery" id="toc-phase-3-decision-support-delivery" class="nav-link" data-scroll-target="#phase-3-decision-support-delivery">Phase 3: Decision-Support Delivery</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About Arclight</h1>
+<h1 class="title">The Arclight Surveillance Architecture</h1>
+<p class="subtitle lead">Pathogen Phase Space Mapping &amp; Niche Velocity</p>
 </div>
 
 
@@ -162,8 +211,87 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Executive Summary
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>An open-source decision-support engine that models the environmental phase space and climate niche velocity of <em>Coccidioides</em> (Valley Fever). By processing multi-temporal climate reanalysis grids alongside field isolation coordinates, the pipeline generates proactive county-level exposure indicators to reduce clinical misdiagnosis in newly exposed regions.</p>
+</div>
+</div>
+<section id="operational-problem-domain-gap" class="level2">
+<h2 class="anchored" data-anchor-id="operational-problem-domain-gap">1. Operational Problem &amp; Domain Gap</h2>
+<ul>
+<li><strong>Clinical Misdiagnosis in Non-Endemic Zones:</strong> <em>Coccidioides</em> causes severe pulmonary illness that is misdiagnosed as routine bacterial pneumonia in up to 70% of early-stage cases outside historical endemic corridors.</li>
+<li><strong>Latency of Indicator Surveillance:</strong> Traditional public health tracking relies on confirmed case reports, introducing weeks of diagnostic and administrative lag.</li>
+<li><strong>Climate-Driven Range Expansion:</strong> Rising soil temperatures and shifting aridity boundaries are systematically displacing the ecological envelope of <em>Coccidioides</em> into previously non-endemic counties.</li>
+</ul>
+<hr>
+</section>
+<section id="system-architecture-ingestion-topology" class="level2">
+<h2 class="anchored" data-anchor-id="system-architecture-ingestion-topology">2. System Architecture &amp; Ingestion Topology</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph LR
+    A[ERA5-Land Climate Grids] --&gt; C(Spatial Computation Engine)
+    B[GBIF Soil Isolates] --&gt; C
+    C --&gt; D[County Exposure Metric]
+    C --&gt; E[Interactive Shiny Console]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="technical-methodology-implementation" class="level2">
+<h2 class="anchored" data-anchor-id="technical-methodology-implementation">3. Technical Methodology &amp; Implementation</h2>
+<section id="phase-1-abiotic-manifold-foundation" class="level3">
+<h3 class="anchored" data-anchor-id="phase-1-abiotic-manifold-foundation">Phase 1: Abiotic Manifold Foundation</h3>
+<p>Phase 1 focuses on building the physical envelope required to anchor Phase 2’s genomic distance matrices (<span class="math inline">\(D_{\text{gen}}\)</span>). Multi-decadal raster arrays are streamed via disk-backed C++ pointers to maintain a memory footprint below 2.5 GB RAM during high-resolution gradient evaluations.</p>
+</section>
+<section id="theoretical-framework" class="level3">
+<h3 class="anchored" data-anchor-id="theoretical-framework">Theoretical Framework</h3>
+<p>To quantify the speed and direction at which this boundary shifts across geographic boundaries, the engine computes <strong>Climate Niche Velocity</strong>:</p>
+<p><span class="math display">\[\text{Niche Velocity} = \frac{\partial E / \partial t}{\nabla E}\]</span></p>
+<p>Where <span class="math inline">\(\partial E / \partial t\)</span> is the temporal rate of change in environmental suitability, and <span class="math inline">\(\nabla E\)</span> represents the spatial gradient across neighboring geographic space.</p>
+</section>
+<section id="phase-2-genomic-adaptation" class="level3">
+<h3 class="anchored" data-anchor-id="phase-2-genomic-adaptation">Phase 2: Genomic Adaptation</h3>
+<p>Phase 2 transitions the pipeline into a landscape genomics framework, integrating spatial coordinates directly with evolutionary mutation rates.</p>
+<ul>
+<li><strong>Genomic Sequence Ingestion:</strong> Query the NCBI Entrez API via the <code>rentrez</code> package to extract <em>Coccidioides</em> sequence accessions alongside sampling metadata.</li>
+<li><strong>Genetic Distance Matrices (<span class="math inline">\(D_{\text{gen}}\)</span>):</strong> Construct pairwise sequence alignments using the <code>ape</code> package to measure nucleotide mutations differentiating regional isolates.</li>
+<li><strong>Phylodynamic Correlation:</strong> Execute a Partial Mantel test to evaluate the correlation between genetic divergence and local environmental anomalies extracted from Phase 1.</li>
+</ul>
+</section>
+<section id="theoretical-framework-1" class="level3">
+<h3 class="anchored" data-anchor-id="theoretical-framework-1">Theoretical Framework</h3>
+<p>Where traditional ecological niche models treat biological traits as static constants, Phase 2 introduces pathogen evolutionary dynamics to evaluate whether mutations actively warp the phase space boundary. By incorporating the genomic axis, the invariant boundary equation becomes dynamic:</p>
+<p><span class="math display">\[f(T_{\text{soil}}, A_{\text{aridity}} \,;\, G_{\text{alleles}}) = 0\]</span></p>
+<p>This formulation quantifies how molecular adaptation physically alters survival limits across geographic space: * <strong>Baseline Genome (<span class="math inline">\(G_0\)</span>):</strong> The historical thermal survival boundary terminates at a summer soil temperature of <span class="math inline">\(37^\circ\text{C}\)</span>. * <strong>Adapted Clade (<span class="math inline">\(G_1\)</span>):</strong> If an emerging lineage accumulates specific heat-shock or stress-response mutations, that mutation warps the geometry of the phase space, shifting the survival threshold to <span class="math inline">\(40^\circ\text{C}\)</span> and expanding the viable envelope into hotter, drier micro-climates.</p>
+<p>To determine whether northern range expansion is driven by passive climate drift or adaptive genomic selection, the system performs a cross-domain association. It tests whether pairwise genetic distance (<span class="math inline">\(D_{\text{gen}}\)</span>) correlates with environmental distance (<span class="math inline">\(D_{\text{env}}\)</span>) independent of baseline geographic distance (<span class="math inline">\(D_{\text{geo}}\)</span>).</p>
+</section>
+<section id="phase-3-decision-support-delivery" class="level3">
+<h3 class="anchored" data-anchor-id="phase-3-decision-support-delivery">Phase 3: Decision-Support Delivery</h3>
+<p>Phase 3 abstracts the complex spatial and bioinformatic pipelines into production-grade artifacts. This ensures the system acts as a reliable decision-support tool rather than an isolated academic script.</p>
+<ul>
+<li><strong>Production Safeguards:</strong> Implement a <code>testthat</code> unit testing suite for automated data validation across the ETL pipeline.</li>
+<li><strong>Operational Risk Console:</strong> Deploy an interactive Leaflet/Shiny dashboard allowing county epidemiologists to export clinical diagnostic advisories.</li>
+</ul>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

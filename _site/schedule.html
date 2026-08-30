@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>schedule</title>
+<title>The Arclight Project Roadmap</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -33,6 +33,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./images/arclight-logo.jpg" rel="icon" type="image/jpeg">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -71,6 +72,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -103,7 +133,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./schedule.html" aria-current="page"> 
-<span class="menu-text">Development Schedule</span></a>
+<span class="menu-text">Project Roadmap</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -137,15 +167,24 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#phase-0-cloud-infrastructure-mlops" id="toc-phase-0-cloud-infrastructure-mlops" class="nav-link active" data-scroll-target="#phase-0-cloud-infrastructure-mlops">Phase 0: Cloud Infrastructure &amp; MLOps</a></li>
+  <li><a href="#phase-1-abiotic-manifold-foundation-geospatial-pipeline" id="toc-phase-1-abiotic-manifold-foundation-geospatial-pipeline" class="nav-link" data-scroll-target="#phase-1-abiotic-manifold-foundation-geospatial-pipeline">Phase 1: Abiotic Manifold Foundation (Geospatial Pipeline)</a></li>
+  <li><a href="#phase-2-genomic-adaptation-phylodynamic-synthesis" id="toc-phase-2-genomic-adaptation-phylodynamic-synthesis" class="nav-link" data-scroll-target="#phase-2-genomic-adaptation-phylodynamic-synthesis">Phase 2: Genomic Adaptation (Phylodynamic Synthesis)</a></li>
+  <li><a href="#phase-3-decision-support-delivery" id="toc-phase-3-decision-support-delivery" class="nav-link" data-scroll-target="#phase-3-decision-support-delivery">Phase 3: Decision-Support Delivery</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">schedule</h1>
+<h1 class="title">The Arclight Project Roadmap</h1>
 </div>
 
 
@@ -162,8 +201,39 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="phase-0-cloud-infrastructure-mlops" class="level3">
+<h3 class="anchored" data-anchor-id="phase-0-cloud-infrastructure-mlops">Phase 0: Cloud Infrastructure &amp; MLOps</h3>
+<ul class="task-list">
+<li><label><input type="checkbox" checked=""><strong>Compute Provisioning:</strong> Deploy an elastic Google Cloud Platform (GCP) Ubuntu Virtual Machine to decouple heavy spatial raster computations from local hardware constraints.</label></li>
+<li><label><input type="checkbox" checked=""><strong>Secure Reverse Proxy:</strong> Configure Nginx with Let’s Encrypt SSL/TLS certificates to route encrypted HTTPS traffic (Port 443) to internal daemon ports, ensuring zero direct public port exposure.</label></li>
+<li><label><input type="checkbox" checked=""><strong>Remote Development Environment:</strong> Install RStudio Server bound exclusively to localhost (127.0.0.1) and establish Ed25519 SSH cryptographic keypairs for secure, passwordless GitHub repository tracking.</label></li>
+</ul>
+</section>
+<section id="phase-1-abiotic-manifold-foundation-geospatial-pipeline" class="level3">
+<h3 class="anchored" data-anchor-id="phase-1-abiotic-manifold-foundation-geospatial-pipeline">Phase 1: Abiotic Manifold Foundation (Geospatial Pipeline)</h3>
+<ul class="task-list">
+<li><label><input type="checkbox" checked=""><strong>Automated Data Ingestion:</strong> Programmatic API ingestion of ERA5/WorldClim rasters and GBIF soil isolation coordinates via <code>rentrez</code>, <code>geodata</code>, and <code>sf</code> spatial joins.</label></li>
+<li><label><input type="checkbox"><strong>Memory Management:</strong> Implement disk-backed C++ pointers via <code>terra</code> for memory-safe multi-decadal raster manipulation.</label></li>
+<li><label><input type="checkbox"><strong>Spatial Computation:</strong> Calculate spatial gradients (<span class="math inline">\(\nabla E\)</span>) and temporal trends (<span class="math inline">\(\partial E / \partial t\)</span>) to output Climate Niche Velocity.</label></li>
+</ul>
+</section>
+<section id="phase-2-genomic-adaptation-phylodynamic-synthesis" class="level3">
+<h3 class="anchored" data-anchor-id="phase-2-genomic-adaptation-phylodynamic-synthesis">Phase 2: Genomic Adaptation (Phylodynamic Synthesis)</h3>
+<ul class="task-list">
+<li><label><input type="checkbox"><strong>Sequence Ingestion:</strong> Automate querying of NCBI Entrez API for <em>Coccidioides</em> sequence accessions.</label></li>
+<li><label><input type="checkbox"><strong>Distance Matrices:</strong> Compute pairwise genetic distances (<span class="math inline">\(D_{\text{gen}}\)</span>) using sequence alignment algorithms.</label></li>
+<li><label><input type="checkbox"><strong>Cross-Domain Synthesis:</strong> Perform spatial regression mapping genetic divergence against local environmental temperature anomalies.</label></li>
+</ul>
+</section>
+<section id="phase-3-decision-support-delivery" class="level3">
+<h3 class="anchored" data-anchor-id="phase-3-decision-support-delivery">Phase 3: Decision-Support Delivery</h3>
+<ul class="task-list">
+<li><label><input type="checkbox"><strong>Production Safeguards:</strong> Finalize <code>testthat</code> unit testing suite for automated pipeline data validation.</label></li>
+<li><label><input type="checkbox"><strong>Executive Interface:</strong> Deploy the interactive Leaflet/Shiny risk console for localized clinical diagnostic alerts.</label></li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

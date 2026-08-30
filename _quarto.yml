@@ -2,6 +2,7 @@ project:
   type: website
 
 website:
+  favicon: images/arclight-logo.jpg
   navbar:
     logo: images/arclight-logo.jpg
     left:
@@ -9,7 +10,7 @@ website:
         href: index.qmd
       - text: How Arclight Works
         href: projects.qmd
-      - text: Development Schedule
+      - text: Project Roadmap
         href: schedule.qmd
     right:
       - text: About

@@ -1,4 +1,70 @@
 ---
-title: "About Arclight"
-format: html
+title: "The Arclight Surveillance Architecture"
+subtitle: "Pathogen Phase Space Mapping & Niche Velocity"
+format:
+  html:
+    toc: true
+    theme: lumen
+    code-fold: true
 ---
+
+:::{.callout-note}
+## Executive Summary
+An open-source decision-support engine that models the environmental phase space and climate niche velocity of *Coccidioides* (Valley Fever). By processing multi-temporal climate reanalysis grids alongside field isolation coordinates, the pipeline generates proactive county-level exposure indicators to reduce clinical misdiagnosis in newly exposed regions.
+:::
+
+## 1. Operational Problem & Domain Gap
+* **Clinical Misdiagnosis in Non-Endemic Zones:** *Coccidioides* causes severe pulmonary illness that is misdiagnosed as routine bacterial pneumonia in up to 70% of early-stage cases outside historical endemic corridors.
+* **Latency of Indicator Surveillance:** Traditional public health tracking relies on confirmed case reports, introducing weeks of diagnostic and administrative lag.
+* **Climate-Driven Range Expansion:** Rising soil temperatures and shifting aridity boundaries are systematically displacing the ecological envelope of *Coccidioides* into previously non-endemic counties.
+
+---
+
+## 2. System Architecture & Ingestion Topology
+
+```{mermaid}
+graph LR
+    A[ERA5-Land Climate Grids] --> C(Spatial Computation Engine)
+    B[GBIF Soil Isolates] --> C
+    C --> D[County Exposure Metric]
+    C --> E[Interactive Shiny Console]
+```
+
+---
+
+## 3. Technical Methodology & Implementation
+
+### Phase 1: Abiotic Manifold Foundation 
+Phase 1 focuses on building the physical envelope required to anchor Phase 2's genomic distance matrices ($D_{\text{gen}}$). Multi-decadal raster arrays are streamed via disk-backed C++ pointers to maintain a memory footprint below 2.5 GB RAM during high-resolution gradient evaluations.
+
+### Theoretical Framework
+To quantify the speed and direction at which this boundary shifts across geographic boundaries, the engine computes **Climate Niche Velocity**:
+
+$$\text{Niche Velocity} = \frac{\partial E / \partial t}{\nabla E}$$
+
+Where $\partial E / \partial t$ is the temporal rate of change in environmental suitability, and $\nabla E$ represents the spatial gradient across neighboring geographic space.
+
+### Phase 2: Genomic Adaptation
+Phase 2 transitions the pipeline into a landscape genomics framework, integrating spatial coordinates directly with evolutionary mutation rates.
+
+* **Genomic Sequence Ingestion:** Query the NCBI Entrez API via the `rentrez` package to extract *Coccidioides* sequence accessions alongside sampling metadata.
+* **Genetic Distance Matrices ($D_{\text{gen}}$):** Construct pairwise sequence alignments using the `ape` package to measure nucleotide mutations differentiating regional isolates.
+* **Phylodynamic Correlation:** Execute a Partial Mantel test to evaluate the correlation between genetic divergence and local environmental anomalies extracted from Phase 1.
+
+### Theoretical Framework
+
+Where traditional ecological niche models treat biological traits as static constants, Phase 2 introduces pathogen evolutionary dynamics to evaluate whether mutations actively warp the phase space boundary. By incorporating the genomic axis, the invariant boundary equation becomes dynamic:
+
+$$f(T_{\text{soil}}, A_{\text{aridity}} \,;\, G_{\text{alleles}}) = 0$$
+
+This formulation quantifies how molecular adaptation physically alters survival limits across geographic space:
+* **Baseline Genome ($G_0$):** The historical thermal survival boundary terminates at a summer soil temperature of $37^\circ\text{C}$.
+* **Adapted Clade ($G_1$):** If an emerging lineage accumulates specific heat-shock or stress-response mutations, that mutation warps the geometry of the phase space, shifting the survival threshold to $40^\circ\text{C}$ and expanding the viable envelope into hotter, drier micro-climates.
+
+To determine whether northern range expansion is driven by passive climate drift or adaptive genomic selection, the system performs a cross-domain association. It tests whether pairwise genetic distance ($D_{\text{gen}}$) correlates with environmental distance ($D_{\text{env}}$) independent of baseline geographic distance ($D_{\text{geo}}$).
+
+### Phase 3: Decision-Support Delivery
+Phase 3 abstracts the complex spatial and bioinformatic pipelines into production-grade artifacts. This ensures the system acts as a reliable decision-support tool rather than an isolated academic script.
+
+* **Production Safeguards:** Implement a `testthat` unit testing suite for automated data validation across the ETL pipeline.
+* **Operational Risk Console:** Deploy an interactive Leaflet/Shiny dashboard allowing county epidemiologists to export clinical diagnostic advisories.

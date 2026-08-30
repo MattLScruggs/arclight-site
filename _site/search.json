@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "The Arclight Project Roadmap",
+    "section": "",
+    "text": "Phase 0: Cloud Infrastructure & MLOps\n\nCompute Provisioning: Deploy an elastic Google Cloud Platform (GCP) Ubuntu Virtual Machine to decouple heavy spatial raster computations from local hardware constraints.\nSecure Reverse Proxy: Configure Nginx with Let’s Encrypt SSL/TLS certificates to route encrypted HTTPS traffic (Port 443) to internal daemon ports, ensuring zero direct public port exposure.\nRemote Development Environment: Install RStudio Server bound exclusively to localhost (127.0.0.1) and establish Ed25519 SSH cryptographic keypairs for secure, passwordless GitHub repository tracking.\n\n\n\nPhase 1: Abiotic Manifold Foundation (Geospatial Pipeline)\n\nAutomated Data Ingestion: Programmatic API ingestion of ERA5/WorldClim rasters and GBIF soil isolation coordinates via rentrez, geodata, and sf spatial joins.\nMemory Management: Implement disk-backed C++ pointers via terra for memory-safe multi-decadal raster manipulation.\nSpatial Computation: Calculate spatial gradients (\\(\\nabla E\\)) and temporal trends (\\(\\partial E / \\partial t\\)) to output Climate Niche Velocity.\n\n\n\nPhase 2: Genomic Adaptation (Phylodynamic Synthesis)\n\nSequence Ingestion: Automate querying of NCBI Entrez API for Coccidioides sequence accessions.\nDistance Matrices: Compute pairwise genetic distances (\\(D_{\\text{gen}}\\)) using sequence alignment algorithms.\nCross-Domain Synthesis: Perform spatial regression mapping genetic divergence against local environmental temperature anomalies.\n\n\n\nPhase 3: Decision-Support Delivery\n\nProduction Safeguards: Finalize testthat unit testing suite for automated pipeline data validation.\nExecutive Interface: Deploy the interactive Leaflet/Shiny risk console for localized clinical diagnostic alerts."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Welcome to the Arclight Project",
@@ -11,6 +18,34 @@
     "href": "about.html",
     "title": "About the Developer",
     "section": "",
-    "text": "Hi, I’m Matt Scruggs, designer and maintainer of the Arclight engine. I’m an epidemiologist and data science professional passionate about solving humanity’s toughest problems with our best technology.\nIn my 20 years of data science experience, I’ve designed solutions for the automotive, consumer retail, insurance, banking, pharmaceutical, and healthcare industries, and worked with C-level executives to turn strategic imperatives into operational tools and capabilities.\nComplex domains and regulatory environments are familiar territory. I’ve built several teams and data science departments from the ground up, focusing on scrappy, high-ROI solutions to prove value, which turn into polished and reliable enterprise assets.\nI hold a Master of Science in Data Analytics, a Master of Public Health, and Post-Graduate Certifications in Machine Learning and Epidemiology."
+    "text": "Hi, I’m Matt Scruggs, designer and maintainer of the Arclight engine. I’m an epidemiologist and data science professional passionate about solving humanity’s toughest problems with our best technology.\nIn my 20 years of data science experience, I’ve designed solutions for the automotive, consumer retail, insurance, banking, pharmaceutical, and healthcare industries, and reported directly to C-level executives to turn strategic imperatives into operational tools and capabilities.\nComplex domains and regulatory environments are familiar territory. I’ve built several teams and data science departments from the ground up, focusing on scrappy, high-ROI solutions to prove value, which turn into polished and reliable enterprise assets.\nI hold a Master of Science in Data Analytics, a Master of Public Health, and Post-Graduate Certifications in Machine Learning and Epidemiology."
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "The Arclight Surveillance Architecture",
+    "section": "",
+    "text": "NoteExecutive Summary\n\n\n\nAn open-source decision-support engine that models the environmental phase space and climate niche velocity of Coccidioides (Valley Fever). By processing multi-temporal climate reanalysis grids alongside field isolation coordinates, the pipeline generates proactive county-level exposure indicators to reduce clinical misdiagnosis in newly exposed regions."
+  },
+  {
+    "objectID": "projects.html#operational-problem-domain-gap",
+    "href": "projects.html#operational-problem-domain-gap",
+    "title": "The Arclight Surveillance Architecture",
+    "section": "1. Operational Problem & Domain Gap",
+    "text": "1. Operational Problem & Domain Gap\n\nClinical Misdiagnosis in Non-Endemic Zones: Coccidioides causes severe pulmonary illness that is misdiagnosed as routine bacterial pneumonia in up to 70% of early-stage cases outside historical endemic corridors.\nLatency of Indicator Surveillance: Traditional public health tracking relies on confirmed case reports, introducing weeks of diagnostic and administrative lag.\nClimate-Driven Range Expansion: Rising soil temperatures and shifting aridity boundaries are systematically displacing the ecological envelope of Coccidioides into previously non-endemic counties."
+  },
+  {
+    "objectID": "projects.html#system-architecture-ingestion-topology",
+    "href": "projects.html#system-architecture-ingestion-topology",
+    "title": "The Arclight Surveillance Architecture",
+    "section": "2. System Architecture & Ingestion Topology",
+    "text": "2. System Architecture & Ingestion Topology\n\n\n\n\n\ngraph LR\n    A[ERA5-Land Climate Grids] --&gt; C(Spatial Computation Engine)\n    B[GBIF Soil Isolates] --&gt; C\n    C --&gt; D[County Exposure Metric]\n    C --&gt; E[Interactive Shiny Console]"
+  },
+  {
+    "objectID": "projects.html#technical-methodology-implementation",
+    "href": "projects.html#technical-methodology-implementation",
+    "title": "The Arclight Surveillance Architecture",
+    "section": "3. Technical Methodology & Implementation",
+    "text": "3. Technical Methodology & Implementation\n\nPhase 1: Abiotic Manifold Foundation\nPhase 1 focuses on building the physical envelope required to anchor Phase 2’s genomic distance matrices (\\(D_{\\text{gen}}\\)). Multi-decadal raster arrays are streamed via disk-backed C++ pointers to maintain a memory footprint below 2.5 GB RAM during high-resolution gradient evaluations.\n\n\nTheoretical Framework\nTo quantify the speed and direction at which this boundary shifts across geographic boundaries, the engine computes Climate Niche Velocity:\n\\[\\text{Niche Velocity} = \\frac{\\partial E / \\partial t}{\\nabla E}\\]\nWhere \\(\\partial E / \\partial t\\) is the temporal rate of change in environmental suitability, and \\(\\nabla E\\) represents the spatial gradient across neighboring geographic space.\n\n\nPhase 2: Genomic Adaptation\nPhase 2 transitions the pipeline into a landscape genomics framework, integrating spatial coordinates directly with evolutionary mutation rates.\n\nGenomic Sequence Ingestion: Query the NCBI Entrez API via the rentrez package to extract Coccidioides sequence accessions alongside sampling metadata.\nGenetic Distance Matrices (\\(D_{\\text{gen}}\\)): Construct pairwise sequence alignments using the ape package to measure nucleotide mutations differentiating regional isolates.\nPhylodynamic Correlation: Execute a Partial Mantel test to evaluate the correlation between genetic divergence and local environmental anomalies extracted from Phase 1.\n\n\n\nTheoretical Framework\nWhere traditional ecological niche models treat biological traits as static constants, Phase 2 introduces pathogen evolutionary dynamics to evaluate whether mutations actively warp the phase space boundary. By incorporating the genomic axis, the invariant boundary equation becomes dynamic:\n\\[f(T_{\\text{soil}}, A_{\\text{aridity}} \\,;\\, G_{\\text{alleles}}) = 0\\]\nThis formulation quantifies how molecular adaptation physically alters survival limits across geographic space: * Baseline Genome (\\(G_0\\)): The historical thermal survival boundary terminates at a summer soil temperature of \\(37^\\circ\\text{C}\\). * Adapted Clade (\\(G_1\\)): If an emerging lineage accumulates specific heat-shock or stress-response mutations, that mutation warps the geometry of the phase space, shifting the survival threshold to \\(40^\\circ\\text{C}\\) and expanding the viable envelope into hotter, drier micro-climates.\nTo determine whether northern range expansion is driven by passive climate drift or adaptive genomic selection, the system performs a cross-domain association. It tests whether pairwise genetic distance (\\(D_{\\text{gen}}\\)) correlates with environmental distance (\\(D_{\\text{env}}\\)) independent of baseline geographic distance (\\(D_{\\text{geo}}\\)).\n\n\nPhase 3: Decision-Support Delivery\nPhase 3 abstracts the complex spatial and bioinformatic pipelines into production-grade artifacts. This ensures the system acts as a reliable decision-support tool rather than an isolated academic script.\n\nProduction Safeguards: Implement a testthat unit testing suite for automated data validation across the ETL pipeline.\nOperational Risk Console: Deploy an interactive Leaflet/Shiny dashboard allowing county epidemiologists to export clinical diagnostic advisories."
   }
 ]
