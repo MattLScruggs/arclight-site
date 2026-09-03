@@ -1,12 +1,5 @@
 [
   {
-    "objectID": "schedule.html",
-    "href": "schedule.html",
-    "title": "The Arclight Project Roadmap",
-    "section": "",
-    "text": "Phase 0: Cloud Infrastructure & MLOps\n\nCompute Provisioning: Deploy an elastic Google Cloud Platform (GCP) Ubuntu Virtual Machine to decouple heavy spatial raster computations from local hardware constraints.\nSecure Reverse Proxy: Configure Nginx with Let’s Encrypt SSL/TLS certificates to route encrypted HTTPS traffic (Port 443) to internal daemon ports, ensuring zero direct public port exposure.\nRemote Development Environment: Install RStudio Server bound exclusively to localhost (127.0.0.1) and establish Ed25519 SSH cryptographic keypairs for secure, passwordless GitHub repository tracking.\n\n\n\nPhase 1: Abiotic Manifold Foundation (Geospatial Pipeline)\n\nAutomated Data Ingestion: Programmatic API ingestion of ERA5/WorldClim rasters and GBIF soil isolation coordinates via rentrez, geodata, and sf spatial joins.\nMemory Management: Implement disk-backed C++ pointers via terra for memory-safe multi-decadal raster manipulation.\nSpatial Computation: Calculate spatial gradients (\\(\\nabla E\\)) and temporal trends (\\(\\partial E / \\partial t\\)) to output Climate Niche Velocity.\n\n\n\nPhase 2: Genomic Adaptation (Phylodynamic Synthesis)\n\nSequence Ingestion: Automate querying of NCBI Entrez API for Coccidioides sequence accessions.\nDistance Matrices: Compute pairwise genetic distances (\\(D_{\\text{gen}}\\)) using sequence alignment algorithms.\nCross-Domain Synthesis: Perform spatial regression mapping genetic divergence against local environmental temperature anomalies.\n\n\n\nPhase 3: Decision-Support Delivery\n\nProduction Safeguards: Finalize testthat unit testing suite for automated pipeline data validation.\nExecutive Interface: Deploy the interactive Leaflet/Shiny risk console for localized clinical diagnostic alerts."
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Welcome to the Arclight Project",
@@ -19,6 +12,13 @@
     "title": "About the Developer",
     "section": "",
     "text": "Hi, I’m Matt Scruggs, designer and maintainer of the Arclight engine. I’m an epidemiologist and data science professional passionate about solving humanity’s toughest problems with our best technology.\nIn my 20 years of data science experience, I’ve designed solutions for the automotive, consumer retail, insurance, banking, pharmaceutical, and healthcare industries, and reported directly to C-level executives to turn strategic imperatives into operational tools and capabilities.\nComplex domains and regulatory environments are familiar territory. I’ve built several teams and data science departments from the ground up, focusing on scrappy, high-ROI solutions to prove value, which turn into polished and reliable enterprise assets.\nI hold a Master of Science in Data Analytics, a Master of Public Health, and Post-Graduate Certifications in Machine Learning and Epidemiology."
+  },
+  {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "The Arclight Project Roadmap",
+    "section": "",
+    "text": "Phase 0: Cloud Infrastructure & MLOps\n\nCompute Provisioning: Deploy an elastic Google Cloud Platform (GCP) Ubuntu Virtual Machine to decouple heavy spatial raster computations from local hardware constraints.\nSecure Reverse Proxy: Configure Nginx with Let’s Encrypt SSL/TLS certificates to route encrypted HTTPS traffic (Port 443) to internal daemon ports, ensuring zero direct public port exposure.\nRemote Development Environment: Install RStudio Server bound exclusively to localhost (127.0.0.1) and establish Ed25519 SSH cryptographic keypairs for secure, passwordless GitHub repository tracking.\n\n\n\nPhase 1: Abiotic Manifold Foundation (Geospatial Pipeline)\n\nAutomated Data Ingestion: Programmatic API ingestion of ERA5/WorldClim rasters and GBIF soil isolation coordinates via rentrez, geodata, and sf spatial joins.\nMemory Management: Implement disk-backed C++ pointers via terra for memory-safe multi-decadal raster manipulation.\nSpatial Computation: Calculate spatial gradients (\\(\\nabla E\\)) and temporal trends (\\(\\partial E / \\partial t\\)) to output Climate Niche Velocity.\n\n\n\nPhase 2: Genomic Adaptation (Phylodynamic Synthesis)\n\nSequence Ingestion: Automate querying of NCBI Entrez API for Coccidioides sequence accessions.\nDistance Matrices: Compute pairwise genetic distances (\\(D_{\\text{gen}}\\)) using sequence alignment algorithms.\nCross-Domain Synthesis: Perform spatial regression mapping genetic divergence against local environmental temperature anomalies.\n\n\n\nPhase 3: Decision-Support Delivery\n\nProduction Safeguards: Finalize testthat unit testing suite for automated pipeline data validation.\nExecutive Interface: Deploy the interactive Leaflet/Shiny risk console for localized clinical diagnostic alerts."
   },
   {
     "objectID": "projects.html",
