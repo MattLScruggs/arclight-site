@@ -7,6 +7,6 @@ about:
   image-shape: rectangle
 ---
 
-Arclight is an open-source eco-epidemiology engine designed for use by public health officials, epidemiologists, clinicians, and academic researchers exploring the potential for infectious disease outbreaks in novel populations and locations.
+Arclight is an open-source, cross-platform, on-device machine learning and AI toolkit designed for use by epidemiologists, clinicians, and public health personnel investigating infectious disease outbreaks in novel populations and locations.
 
-Disease risk is a dynamic state space governed by environmental physics, molecular evolution, and transmission networks. The Arclight engine provides proactive epidemiological intelligence by mapping the emergence probability landscape within this phase space.
+Whether the health emergency is a new outbreak of a bacterial infection, a novel virus, a drug-resistant fungus, an environmental toxin, or a bioterror attack, the first contact between pathogen and the public health system will be the outbreak investigation conducted by local health departments. The Arclight application provides front line public health professionals with actionable decision support tools, backstopped by robust machine learning and AI models.
