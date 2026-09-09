@@ -9,7 +9,7 @@ website:
     left:
       - text: Home
         href: index.qmd
-      - text: How Arclight Works
+      - text: About Arclight
         href: projects.qmd
       - text: Project Roadmap
         href: schedule.qmd
@@ -28,6 +28,9 @@ format:
     theme: lumen
     css: styles.css
     toc: true
+    mermaid:
+      theme: neutral
+      format: svg
 
 editor: visual
 

@@ -74,6 +74,10 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<meta name="mermaid-theme" content="neutral">
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="styles.css">
@@ -103,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./projects.html" aria-current="page"> 
-<span class="menu-text">How Arclight Works</span></a>
+<span class="menu-text">About Arclight</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./schedule.html"> 
@@ -148,6 +152,12 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#what-is-arclight" id="toc-what-is-arclight" class="nav-link active" data-scroll-target="#what-is-arclight">What is Arclight?</a></li>
   <li><a href="#design-goals-and-exclusions" id="toc-design-goals-and-exclusions" class="nav-link" data-scroll-target="#design-goals-and-exclusions">Design Goals and Exclusions</a></li>
+  <li><a href="#technical-methodology-and-implementation" id="toc-technical-methodology-and-implementation" class="nav-link" data-scroll-target="#technical-methodology-and-implementation">Technical Methodology and Implementation:</a>
+  <ul class="collapse">
+  <li><a href="#model-development-and-export" id="toc-model-development-and-export" class="nav-link" data-scroll-target="#model-development-and-export">Model Development and Export</a></li>
+  <li><a href="#flutter-and-dart-integration" id="toc-flutter-and-dart-integration" class="nav-link" data-scroll-target="#flutter-and-dart-integration">Flutter and Dart Integration</a></li>
+  <li><a href="#modular-process-flowchart" id="toc-modular-process-flowchart" class="nav-link" data-scroll-target="#modular-process-flowchart">Modular Process Flowchart</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -197,10 +207,68 @@ ul.task-list li input[type="checkbox"] {
 <section id="design-goals-and-exclusions" class="level2">
 <h2 class="anchored" data-anchor-id="design-goals-and-exclusions">Design Goals and Exclusions</h2>
 <p>Arclight will assist field epidemiologists and public health professionals when investigating potential infectious disease outbreaks. Arclight will exclusively process information on-device to protect PHI, eliminate infrastructure costs, and add direct oversight by the end-user.</p>
-<p>Specific Arclight functions will evolve over time, but will generally will be designed to support epidemiologists during the following phases of an outbreak investigation: - Integrating existing public health surveillance data - Processing case reports and investigative notes - Refining the case definition based on collected information and alternative diagnoses - Organizing case reports based on population, location, and time - Developing etiological hypotheses based on observed notes and reference data</p>
+<p>Specific Arclight functions will evolve over time, but will generally will be designed to support epidemiologists during the following phases of an outbreak investigation: - Integrating existing public health surveillance data - Processing case reports and investigative notes - Refining the case definition based on collected information and alternative diagnoses - Organizing case reports based on population, location, and time - Developing etiological hypotheses based on observed notes and reference data.</p>
 <p>Arclight deployment will include only Android, iOS, and Windows devices. Model performance will be constrained by the demands of on-device processing, to include available modules in the required tech stack. Arclight will not replace established decision support tools used for policy development, outbreak forecasting, or other use cases requiring large data sets and server-grade processing power; rather, it fills a gap at the local level.</p>
+<hr>
+</section>
+<section id="technical-methodology-and-implementation" class="level2">
+<h2 class="anchored" data-anchor-id="technical-methodology-and-implementation">Technical Methodology and Implementation:</h2>
+<p>Arclight’s architecture is built on a modular, cross-platform framework that prioritizes on-device execution to ensure absolute privacy for Protected Health Information (PHI) and independence from cloud infrastructure. The methodology for integrating machine learning capabilities into the application is divided into model development and front-end integration.</p>
+<section id="model-development-and-export" class="level3">
+<h3 class="anchored" data-anchor-id="model-development-and-export">Model Development and Export</h3>
+<p>Each machine learning and AI model is developed independently as a standalone module to ensure ease of testing, rapid iteration, and separation of concerns.</p>
+<ul>
+<li><p><strong>Environment:</strong> Models are developed using <strong>Visual Studio Code (VSCode)</strong>.</p></li>
+<li><p><strong>Framework:</strong> TensorFlow is utilized for model training, evaluation, and optimization.</p></li>
+<li><p><strong>Optimization &amp; Export:</strong> Once trained, models are optimized for mobile and desktop on-device execution and exported into the lightweight <strong>TensorFlow Lite (.tflite)</strong> format.</p></li>
+</ul>
+</section>
+<section id="flutter-and-dart-integration" class="level3">
+<h3 class="anchored" data-anchor-id="flutter-and-dart-integration">Flutter and Dart Integration</h3>
+<p>The core application is built using the <strong>Flutter</strong> framework, enabling a single codebase to deploy across Android, iOS, and Windows. For each machine learning function or utility module, a standardized, sequential process is followed within the <strong>Dart</strong> codebase:</p>
+<ul>
+<li><p><strong>Front-End Design:</strong> Develop the responsive front-end user interface components in <strong>Flutter</strong> to capture inputs (text, audio, images).</p></li>
+<li><p><strong>Data Import &amp; Preprocessing:</strong> Write robust data ingestion and preprocessing handlers in <strong>Dart</strong> to prepare inputs for model compatibility.</p></li>
+<li><p><strong>Model Execution:</strong> Invoke the exported <strong>.tflite</strong> model locally using the tflite package for <strong>Dart</strong>, passing the preprocessed inputs to the model.</p></li>
+<li><p><strong>Output Formatting:</strong> Capture the inference results, process and format them (generating charts, tables, maps, or textual decision support), and display them within the UI.</p></li>
+</ul>
+<p>This modular workflow is replicated dynamically for every machine learning model integrated into Arclight.</p>
+</section>
+<section id="modular-process-flowchart" class="level3">
+<h3 class="anchored" data-anchor-id="modular-process-flowchart">Modular Process Flowchart</h3>
+<p>Below is a visual representation of the lifecycle of an Arclight ML module, from development to on-device output:</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">---
+config:
+  theme: default
+  look: classic
+  layout: dagre
+---
+flowchart LR
+    subgraph Model Development Phase
+        A["Define ML Capability"] --&gt; B["Model Development"]
+        B --&gt; C["Export to TensorFlow Lite"]
+    end
+    
+    subgraph Flutter Development Phase
+        D["Front-End Design in Flutter"] --&gt; E["Data Import &amp; Preprocessing in Dart"]
+        E --&gt; F["Local Model Execution with tflite package"]
+        F --&gt; G["Output Formatting &amp; Display"]
+    end
+    C --&gt; D
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
