@@ -1,5 +1,40 @@
 [
   {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "The Arclight Project Roadmap",
+    "section": "",
+    "text": "Note\n\n\n\nArclight follows the principles of MVP development and separation of concerns. Models are developed, validated, optimized, and released separately from the Flutter module. The Flutter module is designed to adapt to additional functionality unlocked by adding additional ML modules via the .tflite package."
+  },
+  {
+    "objectID": "schedule.html#phase-1-model-development-optimization-google-colab",
+    "href": "schedule.html#phase-1-model-development-optimization-google-colab",
+    "title": "The Arclight Project Roadmap",
+    "section": "Phase 1: Model Development & Optimization (Google Colab)",
+    "text": "Phase 1: Model Development & Optimization (Google Colab)\nTrain, validate, and optimize machine learning models within cloud notebook environments before exporting for on-device execution, publishing source code under an open-source license.\n\nTasks:\n\nColab Model Development: Develop, train, and validate initial ML models (such as text-to-speech tools extracting key outbreak parameters like location, time, symptoms, and descriptions) inside Google Colab.\nOptimization & Quantization: Apply post-training quantization and model compression techniques to minimize memory footprint and optimize execution speed for target end-user devices.\nTFLite Export: Export tuned models into the lightweight .tflite format required for mobile and desktop execution.\nOpen-Source Licensing: Host model source code and assets on GitHub under the GNU General Public License v3.0 (GPL v3.0)."
+  },
+  {
+    "objectID": "schedule.html#phase-2-uiux-proof-of-concept-streamlit-docker",
+    "href": "schedule.html#phase-2-uiux-proof-of-concept-streamlit-docker",
+    "title": "The Arclight Project Roadmap",
+    "section": "Phase 2: UI/UX Proof of Concept (Streamlit & Docker)",
+    "text": "Phase 2: UI/UX Proof of Concept (Streamlit & Docker)\nPrototype the user interface and validate operational workflows quickly through a web-based Proof of Concept (POC).\n\nTasks:\n\nStreamlit Prototype: Build a functional Streamlit interface to mock up layouts, data ingestion workflows, and visualization formats (maps, tables, epidemic curves).\nWorkflow Validation: Test end-to-end data processing, user interaction flows, and structured decision-support outputs within the Streamlit workspace.\nDocker Containerization: Package the Streamlit application into a Docker container for isolated testing, streamlined sharing, and collecting feedback from epidemiologists and stakeholders."
+  },
+  {
+    "objectID": "schedule.html#phase-3-flutter-application-development-integration",
+    "href": "schedule.html#phase-3-flutter-application-development-integration",
+    "title": "The Arclight Project Roadmap",
+    "section": "Phase 3: Flutter Application Development & Integration",
+    "text": "Phase 3: Flutter Application Development & Integration\nConstruct the production cross-platform native application framework and integrate local machine learning models into the Dart pipeline.\n\nTasks:\n\nApp Scaffolding & Front-End: Develop responsive front-end UI components in Flutter supporting Android, iOS, and Windows targeting cross-platform consistency.\nDart Data Pipeline: Implement data import, sanitization, and preprocessing functions in Dart to prepare user inputs for model consumption.\nOn-Device Model Integration: Integrate exported .tflite models into the Flutter application via the tflite package in Dart for privacy-preserving, local execution.\nSecure Local Storage: Implement encrypted local databases (e.g., SQLite or Hive) with local encrypted backups to external storage media like USB drives."
+  },
+  {
+    "objectID": "schedule.html#phase-4-integration-testing-multi-platform-deployment",
+    "href": "schedule.html#phase-4-integration-testing-multi-platform-deployment",
+    "title": "The Arclight Project Roadmap",
+    "section": "Phase 4: Integration Testing & Multi-Platform Deployment",
+    "text": "Phase 4: Integration Testing & Multi-Platform Deployment\nConduct rigorous system-wide testing and publish production application builds across supported platforms and repositories.\n\nTasks:\n\nIntegration Testing: Perform comprehensive integration testing across Android, iOS, and Windows, verifying on-device model accuracy, UI responsiveness, PHI censoring algorithms during PDF/CSV exports, and database security.\nApp Store & Open-Source Distribution: Publish finalized production binaries to app stores (Google Play Store, Apple App Store, Microsoft Store) and release full source code and build distributions on GitHub."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Welcome to the Arclight Project",
@@ -14,38 +49,31 @@
     "text": "Hi, I’m Matt Scruggs, designer and maintainer of the Arclight engine. I’m an epidemiologist and data science professional passionate about solving humanity’s toughest problems with our best technology.\nIn my 20 years of data science experience, I’ve designed solutions for the automotive, consumer retail, insurance, banking, pharmaceutical, and healthcare industries, and reported directly to C-level executives to turn strategic imperatives into operational tools and capabilities.\nComplex domains and regulatory environments are familiar territory. I’ve built several teams and data science departments from the ground up, focusing on scrappy, high-ROI solutions to prove value, which turn into polished and reliable enterprise assets.\nI hold a Master of Science in Data Analytics, a Master of Public Health, and Post-Graduate Certifications in Machine Learning and Epidemiology."
   },
   {
-    "objectID": "schedule.html",
-    "href": "schedule.html",
-    "title": "The Arclight Project Roadmap",
-    "section": "",
-    "text": "Coming Soon"
-  },
-  {
     "objectID": "projects.html",
     "href": "projects.html",
-    "title": "The Arclight Toolkit",
+    "title": "What Is Arclight?",
     "section": "",
     "text": "NoteThe Problem\n\n\n\nPractical implementation of machine learning and artificial intelligence is significantly lacking on the front lines of public health. While many proposed solutions show promise in controlled academic settings, actual implementation is challenged by data fragmentation, data bias, privacy concerns, domain oversights, or a reliance on computing infrastructure unavailable to under-resourced local health departments.\nWhether the health emergency is a new outbreak of an existing pathogen, a novel virus, a drug-resistant fungus, an environmental toxin, or a bioterror attack, the first contact between pathogen and the public health system will be the outbreak investigation conducted by local health departments. The impact generated by aiding this process with ML/AI tools is considerable, and currently unaddressed."
   },
   {
-    "objectID": "projects.html#what-is-arclight",
-    "href": "projects.html#what-is-arclight",
-    "title": "The Arclight Toolkit",
-    "section": "What is Arclight?",
-    "text": "What is Arclight?\nArclight is an open-source, cross-platform, on-device machine learning and AI toolkit for epidemiologists and public health professionals designed to provide decision support during an outbreak investigation.\nIn its final form, the application, running on an end-user’s device, will bring in information in the form of images, text, or audio, process the information locally, and generate outputs in the form of text, charts, graphs, maps, or other helpful decision support aides through the use of various machine learning and AI models."
+    "objectID": "projects.html#our-solution",
+    "href": "projects.html#our-solution",
+    "title": "What Is Arclight?",
+    "section": "Our Solution",
+    "text": "Our Solution\nArclight is an open-source, cross-platform, on-device machine learning and AI toolkit for epidemiologists and public health professionals designed to provide decision support during an outbreak investigation.\nIn its final form, the application, running on an end-user’s device, will bring in information in the form of images, text, or audio, process the information locally, and generate outputs in the form of text, charts, graphs, maps, or other helpful decision support aides through the use of various machine learning and AI models."
   },
   {
     "objectID": "projects.html#design-goals-and-exclusions",
     "href": "projects.html#design-goals-and-exclusions",
-    "title": "The Arclight Toolkit",
+    "title": "What Is Arclight?",
     "section": "Design Goals and Exclusions",
-    "text": "Design Goals and Exclusions\nArclight will assist field epidemiologists and public health professionals when investigating potential infectious disease outbreaks. Arclight will exclusively process information on-device to protect PHI, eliminate infrastructure costs, and add direct oversight by the end-user.\nSpecific Arclight functions will evolve over time, but will generally will be designed to support epidemiologists during the following phases of an outbreak investigation: - Integrating existing public health surveillance data - Processing case reports and investigative notes - Refining the case definition based on collected information and alternative diagnoses - Organizing case reports based on population, location, and time - Developing etiological hypotheses based on observed notes and reference data.\nArclight deployment will include only Android, iOS, and Windows devices. Model performance will be constrained by the demands of on-device processing, to include available modules in the required tech stack. Arclight will not replace established decision support tools used for policy development, outbreak forecasting, or other use cases requiring large data sets and server-grade processing power; rather, it fills a gap at the local level."
+    "text": "Design Goals and Exclusions\nArclight will assist field epidemiologists and public health professionals when investigating potential infectious disease outbreaks. Arclight will exclusively process information on-device to protect PHI, eliminate infrastructure costs, and add direct oversight by the end-user.\nSpecific Arclight functions will evolve over time, but will generally will be designed to support epidemiologists during the following phases of an outbreak investigation:\n\nIntegrating existing public health surveillance data\nProcessing case reports and investigative notes\nRefining the case definition based on collected information and alternative diagnoses\nOrganizing case reports based on population, location, and time\nDeveloping etiological hypotheses based on observed notes and reference data.\n\nArclight deployment will include only Android, iOS, and Windows devices. Model performance will be constrained by the demands of on-device processing, to include available modules in the required tech stack. Arclight will not replace established decision support tools used for policy development, outbreak forecasting, or other use cases requiring large data sets and server-grade processing power; rather, it fills a gap at the local level."
   },
   {
     "objectID": "projects.html#technical-methodology-and-implementation",
     "href": "projects.html#technical-methodology-and-implementation",
-    "title": "The Arclight Toolkit",
-    "section": "Technical Methodology and Implementation:",
-    "text": "Technical Methodology and Implementation:\nArclight’s architecture is built on a modular, cross-platform framework that prioritizes on-device execution to ensure absolute privacy for Protected Health Information (PHI) and independence from cloud infrastructure. The methodology for integrating machine learning capabilities into the application is divided into model development and front-end integration.\n\nModel Development and Export\nEach machine learning and AI model is developed independently as a standalone module to ensure ease of testing, rapid iteration, and separation of concerns.\n\nEnvironment: Models are developed using Visual Studio Code (VSCode).\nFramework: TensorFlow is utilized for model training, evaluation, and optimization.\nOptimization & Export: Once trained, models are optimized for mobile and desktop on-device execution and exported into the lightweight TensorFlow Lite (.tflite) format.\n\n\n\nFlutter and Dart Integration\nThe core application is built using the Flutter framework, enabling a single codebase to deploy across Android, iOS, and Windows. For each machine learning function or utility module, a standardized, sequential process is followed within the Dart codebase:\n\nFront-End Design: Develop the responsive front-end user interface components in Flutter to capture inputs (text, audio, images).\nData Import & Preprocessing: Write robust data ingestion and preprocessing handlers in Dart to prepare inputs for model compatibility.\nModel Execution: Invoke the exported .tflite model locally using the tflite package for Dart, passing the preprocessed inputs to the model.\nOutput Formatting: Capture the inference results, process and format them (generating charts, tables, maps, or textual decision support), and display them within the UI.\n\nThis modular workflow is replicated dynamically for every machine learning model integrated into Arclight.\n\n\nModular Process Flowchart\nBelow is a visual representation of the lifecycle of an Arclight ML module, from development to on-device output:\n\n\n\n\n\n---\nconfig:\n  theme: default\n  look: classic\n  layout: dagre\n---\nflowchart LR\n    subgraph Model Development Phase\n        A[\"Define ML Capability\"] --&gt; B[\"Model Development\"]\n        B --&gt; C[\"Export to TensorFlow Lite\"]\n    end\n    \n    subgraph Flutter Development Phase\n        D[\"Front-End Design in Flutter\"] --&gt; E[\"Data Import & Preprocessing in Dart\"]\n        E --&gt; F[\"Local Model Execution with tflite package\"]\n        F --&gt; G[\"Output Formatting & Display\"]\n    end\n    C --&gt; D"
+    "title": "What Is Arclight?",
+    "section": "Technical Methodology and Implementation",
+    "text": "Technical Methodology and Implementation\nArclight’s architecture is built on a modular, cross-platform framework that prioritizes on-device execution to ensure absolute privacy for Protected Health Information (PHI) and independence from cloud infrastructure. The methodology for integrating machine learning capabilities into the application is divided into model development and front-end integration.\n\nModular Process Flowchart\nBelow is a visual representation of the lifecycle of an Arclight ML module, from development to on-device output:\n\n\n\n\n\n---\nconfig:\n  theme: default\n  look: classic\n  layout: dagre\n---\nflowchart TD\n    subgraph Colab Development\n        A(\"Model Development\")\n        B(\"Validation and Testing\")\n        C(\"Compilation and Optimization\")\n        D(\"Export to TensorFlow Lite\")\n    end\n    E(\"Deploy under GPL 3.0 license\")\n    subgraph Streamlit POC\n        F(\"UI Mockup\")\n        G(\"Model Integration\")\n        H(\"Dockerize\")\n    end\n    subgraph Flutter Module\n        I(\"Data Import & Preprocessing in Dart\")\n        J(\"Local Model Execution with tflite package\")\n        K(\"Output Formatting & Display\")\n    end\n    A --&gt; B\n    B --&gt; C\n    C --&gt; D\n    D --&gt; E\n    D --&gt; G\n    F --&gt; G\n    G --&gt; H\n    H --&gt; E\n    D --&gt; J\n    I --&gt; J\n    J --&gt; K\n\n\n\n\n\n\n\n\nModel Development and Export\nEach machine learning and AI model is developed independently as a standalone module to ensure ease of testing, rapid iteration, and separation of concerns.\n\nEnvironment: Models are developed using Google Colab.\nFramework: TensorFlow is utilized for model training, evaluation, and optimization.\nOptimization & Export: Once trained, models are optimized for mobile and desktop on-device execution and exported into the lightweight TensorFlow Lite (.tflite) format. Trained models are available for integration into other applications under GNU Public License v3.0.\n\n\n\nFlutter and Dart Integration\nThe core application is built using the Flutter framework, enabling a single codebase to deploy across Android, iOS, and Windows. For each machine learning function or utility module, a standardized, sequential process is followed within the Dart codebase:\n\nFront-End Design: Develop the responsive front-end user interface components in Flutter to capture inputs (text, audio, images).\nData Import & Preprocessing: Write robust data ingestion and preprocessing handlers in Dart to prepare inputs for model compatibility.\nModel Execution: Invoke the exported .tflite model locally using the tflite package for Dart, passing the preprocessed inputs to the model.\nOutput Formatting: Capture the inference results, process and format them (generating charts, tables, maps, or textual decision support), and display them within the UI.\n\nThis modular workflow is replicated dynamically for every machine learning model integrated into Arclight."
   }
 ]
