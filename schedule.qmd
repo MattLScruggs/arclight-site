@@ -3,10 +3,9 @@ title: "The Arclight Project Roadmap"
 format: html
 ---
 
-:::callout-note
-Arclight follows the principles of MVP development and separation of concerns. Models are developed, validated, optimized, and released separately from the Flutter module. The Flutter module is designed to adapt to additional functionality unlocked by adding additional ML modules via the .tflite package. 
+::: callout-note
+Arclight follows the principles of MVP development and separation of concerns. Models are developed, validated, optimized, and released separately from the Flutter module. The Flutter module is designed to adapt to additional functionality unlocked by adding additional ML modules via the .tflite package.
 :::
-
 
 ## Phase 1: Model Development & Optimization (Google Colab)
 
@@ -57,4 +56,3 @@ Conduct rigorous system-wide testing and publish production application builds a
 - [ ] Integration Testing: Perform comprehensive integration testing across Android, iOS, and Windows, verifying on-device model accuracy, UI responsiveness, PHI censoring algorithms during PDF/CSV exports, and database security.
 
 - [ ] App Store & Open-Source Distribution: Publish finalized production binaries to app stores (Google Play Store, Apple App Store, Microsoft Store) and release full source code and build distributions on GitHub.
-
