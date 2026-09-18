@@ -197,7 +197,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Arclight follows the principles of MVP development and separation of concerns. Models are developed, validated, optimized, and released separately from the Flutter module. The Flutter module is designed to adapt to additional functionality unlocked by adding additional ML modules via the .tflite package.</p>
+<p>Arclight follows principles of MVP development and separation of concerns. The main Arclight model will be the initial release, developed, optimized, and made available in a standalone ONNX format. A quantized version will then be developed as an integrated Streamlit app packaged in a deployable Docket container. The fully integrated Flutter application will be the final release, initially targeting Android, Windows, and Linux systems.</p>
 </div>
 </div>
 <section id="phase-1-model-development-optimization-google-colab" class="level2">
@@ -206,9 +206,9 @@ Note
 <section id="tasks" class="level3">
 <h3 class="anchored" data-anchor-id="tasks">Tasks:</h3>
 <ul class="task-list">
-<li><p><label><input type="checkbox">Colab Model Development: Develop, train, and validate initial ML models (such as text-to-speech tools extracting key outbreak parameters like location, time, symptoms, and descriptions) inside Google Colab.</label></p></li>
+<li><p><label><input type="checkbox">Colab Model Development: Develop, train, and validate initial model inside Google Colab.</label></p></li>
 <li><p><label><input type="checkbox">Optimization &amp; Quantization: Apply post-training quantization and model compression techniques to minimize memory footprint and optimize execution speed for target end-user devices.</label></p></li>
-<li><p><label><input type="checkbox">TFLite Export: Export tuned models into the lightweight .tflite format required for mobile and desktop execution.</label></p></li>
+<li><p><label><input type="checkbox">ONNX Export: Export tuned models into the industry standard ONNX format required for widespread mobile and desktop release.</label></p></li>
 <li><p><label><input type="checkbox">Open-Source Licensing: Host model source code and assets on GitHub under the GNU General Public License v3.0 (GPL v3.0).</label></p></li>
 </ul>
 </section>
@@ -219,7 +219,7 @@ Note
 <section id="tasks-1" class="level3">
 <h3 class="anchored" data-anchor-id="tasks-1">Tasks:</h3>
 <ul class="task-list">
-<li><p><label><input type="checkbox">Streamlit Prototype: Build a functional Streamlit interface to mock up layouts, data ingestion workflows, and visualization formats (maps, tables, epidemic curves).</label></p></li>
+<li><p><label><input type="checkbox">Streamlit Prototype: Build a functional Streamlit interface to mock up layouts, data ingestion workflows, and visualization formats required for different end-use cases.</label></p></li>
 <li><p><label><input type="checkbox">Workflow Validation: Test end-to-end data processing, user interaction flows, and structured decision-support outputs within the Streamlit workspace.</label></p></li>
 <li><p><label><input type="checkbox">Docker Containerization: Package the Streamlit application into a Docker container for isolated testing, streamlined sharing, and collecting feedback from epidemiologists and stakeholders.</label></p></li>
 </ul>
@@ -231,9 +231,9 @@ Note
 <section id="tasks-2" class="level3">
 <h3 class="anchored" data-anchor-id="tasks-2">Tasks:</h3>
 <ul class="task-list">
-<li><p><label><input type="checkbox">App Scaffolding &amp; Front-End: Develop responsive front-end UI components in Flutter supporting Android, iOS, and Windows targeting cross-platform consistency.</label></p></li>
+<li><p><label><input type="checkbox">App Scaffolding &amp; Front-End: Develop responsive front-end UI components in Flutter supporting Android, Linux, and Windows targeting cross-platform consistency.</label></p></li>
 <li><p><label><input type="checkbox">Dart Data Pipeline: Implement data import, sanitization, and preprocessing functions in Dart to prepare user inputs for model consumption.</label></p></li>
-<li><p><label><input type="checkbox">On-Device Model Integration: Integrate exported .tflite models into the Flutter application via the tflite package in Dart for privacy-preserving, local execution.</label></p></li>
+<li><p><label><input type="checkbox">On-Device Model Integration: Integrate exported .onnx models into the Flutter application for privacy-preserving, local execution.</label></p></li>
 <li><p><label><input type="checkbox">Secure Local Storage: Implement encrypted local databases (e.g., SQLite or Hive) with local encrypted backups to external storage media like USB drives.</label></p></li>
 </ul>
 </section>
