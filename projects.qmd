@@ -18,9 +18,7 @@ Whether the health emergency is a new outbreak of an existing pathogen, a novel 
 
 ## Our Solution
 
-Arclight is an open-source, cross-platform, on-device machine learning and AI toolkit for epidemiologists and public health professionals designed to provide decision support during an outbreak investigation.
-
-In its final form, the application, running on an end-user’s device, will bring in information in the form of images, text, or audio, process the information locally, and generate outputs in the form of text, charts, graphs, maps, or other helpful decision support aides through the use of various machine learning and AI models.
+Arclight is an open-source, domain-specific reasoning model designed to empower epidemiologists and public health professionals with real-time decision support during outbreak investigations. The model is designed to run locally, on device via a cross-platform app, and incorporate reasoning and RAG capabilities built around the ONNX format and released across three key stages (open-source ONNX model, containerized Streamlit POC, and cross-platform Flutter app).
 
 ------------------------------------------------------------------------
 
@@ -40,7 +38,7 @@ Specific Arclight functions will evolve over time, but will generally will be de
 
 - Developing etiological hypotheses based on observed notes and reference data.
 
-Arclight deployment will include only Android, iOS, and Windows devices. Model performance will be constrained by the demands of on-device processing, to include available modules in the required tech stack. Arclight will not replace established decision support tools used for policy development, outbreak forecasting, or other use cases requiring large data sets and server-grade processing power; rather, it fills a gap at the local level.
+Arclight deployment will include only Android, Linux, and Windows devices. Model performance will be constrained by the demands of on-device processing, to include available modules in the required tech stack. Arclight will not replace established decision support tools used for policy development, outbreak forecasting, or other use cases requiring large data sets and server-grade processing power; rather, it fills a gap at the local level.
 
 ## Technical Methodology and Implementation
 
@@ -54,61 +52,94 @@ Below is a visual representation of the lifecycle of an Arclight ML module, from
 %%| echo: false
 ---
 config:
-  theme: default
-  look: classic
+  theme: neo
+  look: neo
   layout: dagre
 ---
 flowchart TD
-    subgraph Colab Development
-        A("Model Development")
-        B("Validation and Testing")
-        C("Compilation and Optimization")
-        D("Export to TensorFlow Lite")
+    subgraph Baseline Model Development
+        Dev("Pre-Training")
+        Fine("Early Fine-Tuning")
+        Open("Open-Source Model Comparison")
+        Eval("Model Evaluation")
+        Sel("Model Selection")
+        Dom("Domain-Specific Finetuning")
+        On("Final Evaluation")
     end
-    E("Deploy under GPL 3.0 license")
+    subgraph Reasoning and RAG Capabilities
+        Data("Reference Data Curation and Cleaning")
+        Inp("Reference Library Expansion Functions")
+        Proc("Embedding and Vectorization")
+        Ret("Query, Search, Retrieval Functions")
+        Reas("Base Domain Reasoning and Alignment")
+        Cont("Context-Grounded Fine-Tuning")
+    end
+    GPL("Deploy under GPL 3.0 license")
     subgraph Streamlit POC
-        F("UI Mockup")
-        G("Model Integration")
-        H("Dockerize")
+        UI("UI Mockup")
+        Opt("Model Quantization and Optimization")
+        Int("Model Integration")
+        Dock("Dockerize")
     end
     subgraph Flutter Module
-        I("Data Import & Preprocessing in Dart")
-        J("Local Model Execution with tflite package")
-        K("Output Formatting & Display")
+        Pre("Data Import & Preprocessing in Dart")
+        Loc("Local Model Execution")
+        Out("Output Formatting & Display")
     end
-    A --> B
-    B --> C
-    C --> D
-    D --> E
-    D --> G
-    F --> G
-    G --> H
-    H --> E
-    D --> J
-    I --> J
-    J --> K
+    Dev --> Fine
+    Fine --> Eval
+    Open --> Eval
+    Eval --> Sel
+    Sel --> Dom
+    Dom --> On
+    On --> Data
+    Data --> Inp
+    Inp --> Proc
+    Proc --> Ret
+    Ret --> Reas
+    Reas --> Cont
+    Cont --> GPL
+    Cont --> UI
+    UI --> Opt
+    Opt --> Int
+    Int --> Dock
+    Dock --> GPL
+    Dock --> Pre
+    Pre --> Loc
+    Loc --> Out
+    Out --> GPL
 ```
 
-### Model Development and Export
+### Model Fine-Tuning and ONNX Export
 
-Each machine learning and AI model is developed independently as a standalone module to ensure ease of testing, rapid iteration, and separation of concerns.
+The core domain-specific language model is adapted and optimized for local, low-latency execution with reasoning and RAG support.
 
-- **Environment:** Models are developed using **Google Colab**.
+- **Domain Focus:** Fine-tune and adapt an open-source language model specialized for public health and epidemiological reasoning.
 
-- **Framework:** TensorFlow is utilized for model training, evaluation, and optimization.
+- **RAG Integration:** Embed an on-device Retrieval-Augmented Generation pipeline to ground reasoning against validated epidemiological literature and local case data.
 
-- **Optimization & Export:** Once trained, models are optimized for mobile and desktop on-device execution and exported into the lightweight **TensorFlow Lite (.tflite)** format. Trained models are available for integration into other applications under **GNU Public License v3.0**.
+- **Export & Quantization:** Export the model and retrieval pipelines into the open **ONNX format**, applying quantization to optimize memory usage and performance across desktop and mobile devices.
+
+### Containerized Streamlit POC
+
+Prior to the full mobile and desktop rollout, a containerized prototype is constructed using **Streamlit** to validate workflows and user experience:
+
+- **Rapid Prototyping:** Build a web-based proof-of-concept to test local language model querying, RAG integration, and visual outputs with stakeholders.
+
+- **Containerization:** Package the Streamlit interface and quantized ONNX runtime inside a **Docker container** to ensure reproducible testing across different evaluation environments.
+
+- **Workflow Validation:** Gather user feedback on interactive reporting features—including dynamic maps, tables, and epidemic curves—to refine UI/UX specifications before native app development.
 
 ### Flutter and Dart Integration
 
-The core application is built using the **Flutter** framework, enabling a single codebase to deploy across Android, iOS, and Windows. For each machine learning function or utility module, a standardized, sequential process is followed within the **Dart** codebase:
+The core application is built using the **Flutter** framework, enabling a single codebase to deploy across Android, Windows, and Linux. For the local language model and RAG pipeline, a standardized process is followed within the Dart codebase:
 
-- **Front-End Design:** Develop the responsive front-end user interface components in **Flutter** to capture inputs (text, audio, images).
+- **Front-End Design:** Develop the responsive front-end user interface components in Flutter to capture inputs (text, audio, images).
 
 - **Data Import & Preprocessing:** Write robust data ingestion and preprocessing handlers in **Dart** to prepare inputs for model compatibility.
 
-- **Model Execution:** Invoke the exported **.tflite** model locally using the tflite package for **Dart**, passing the preprocessed inputs to the model.
+- **Model Execution:** Invoke the quantized **ONNX model** locally using cross-platform ONNX Runtime bindings in Dart to run inferences and RAG retrieval strictly on-device.
 
 - **Output Formatting:** Capture the inference results, process and format them (generating charts, tables, maps, or textual decision support), and display them within the UI.
 
-This modular workflow is replicated dynamically for every machine learning model integrated into Arclight.
+This workflow ensures on-device reasoning and privacy preservation across all target platforms.

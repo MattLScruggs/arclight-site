@@ -155,7 +155,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#technical-methodology-and-implementation" id="toc-technical-methodology-and-implementation" class="nav-link" data-scroll-target="#technical-methodology-and-implementation">Technical Methodology and Implementation</a>
   <ul class="collapse">
   <li><a href="#modular-process-flowchart" id="toc-modular-process-flowchart" class="nav-link" data-scroll-target="#modular-process-flowchart">Modular Process Flowchart</a></li>
-  <li><a href="#model-development-and-export" id="toc-model-development-and-export" class="nav-link" data-scroll-target="#model-development-and-export">Model Development and Export</a></li>
+  <li><a href="#model-fine-tuning-and-onnx-export" id="toc-model-fine-tuning-and-onnx-export" class="nav-link" data-scroll-target="#model-fine-tuning-and-onnx-export">Model Fine-Tuning and ONNX Export</a></li>
+  <li><a href="#containerized-streamlit-poc" id="toc-containerized-streamlit-poc" class="nav-link" data-scroll-target="#containerized-streamlit-poc">Containerized Streamlit POC</a></li>
   <li><a href="#flutter-and-dart-integration" id="toc-flutter-and-dart-integration" class="nav-link" data-scroll-target="#flutter-and-dart-integration">Flutter and Dart Integration</a></li>
   </ul></li>
   </ul>
@@ -200,8 +201,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="our-solution" class="level2">
 <h2 class="anchored" data-anchor-id="our-solution">Our Solution</h2>
-<p>Arclight is an open-source, cross-platform, on-device machine learning and AI toolkit for epidemiologists and public health professionals designed to provide decision support during an outbreak investigation.</p>
-<p>In its final form, the application, running on an end-user’s device, will bring in information in the form of images, text, or audio, process the information locally, and generate outputs in the form of text, charts, graphs, maps, or other helpful decision support aides through the use of various machine learning and AI models.</p>
+<p>Arclight is an open-source, domain-specific reasoning model designed to empower epidemiologists and public health professionals with real-time decision support during outbreak investigations. The model is designed to run locally, on device via a cross-platform app, and incorporate reasoning and RAG capabilities built around the ONNX format and released across three key stages (open-source ONNX model, containerized Streamlit POC, and cross-platform Flutter app).</p>
 <hr>
 </section>
 <section id="design-goals-and-exclusions" class="level2">
@@ -215,7 +215,7 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Organizing case reports based on population, location, and time</p></li>
 <li><p>Developing etiological hypotheses based on observed notes and reference data.</p></li>
 </ul>
-<p>Arclight deployment will include only Android, iOS, and Windows devices. Model performance will be constrained by the demands of on-device processing, to include available modules in the required tech stack. Arclight will not replace established decision support tools used for policy development, outbreak forecasting, or other use cases requiring large data sets and server-grade processing power; rather, it fills a gap at the local level.</p>
+<p>Arclight deployment will include only Android, Linux, and Windows devices. Model performance will be constrained by the demands of on-device processing, to include available modules in the required tech stack. Arclight will not replace established decision support tools used for policy development, outbreak forecasting, or other use cases requiring large data sets and server-grade processing power; rather, it fills a gap at the local level.</p>
 </section>
 <section id="technical-methodology-and-implementation" class="level2">
 <h2 class="anchored" data-anchor-id="technical-methodology-and-implementation">Technical Methodology and Implementation</h2>
@@ -230,39 +230,62 @@ ul.task-list li input[type="checkbox"] {
 <div>
 <pre class="mermaid mermaid-js">---
 config:
-  theme: default
-  look: classic
+  theme: neo
+  look: neo
   layout: dagre
 ---
 flowchart TD
-    subgraph Colab Development
-        A("Model Development")
-        B("Validation and Testing")
-        C("Compilation and Optimization")
-        D("Export to TensorFlow Lite")
+    subgraph Baseline Model Development
+        Dev("Pre-Training")
+        Fine("Early Fine-Tuning")
+        Open("Open-Source Model Comparison")
+        Eval("Model Evaluation")
+        Sel("Model Selection")
+        Dom("Domain-Specific Finetuning")
+        On("Final Evaluation")
     end
-    E("Deploy under GPL 3.0 license")
+    subgraph Reasoning and RAG Capabilities
+        Data("Reference Data Curation and Cleaning")
+        Inp("Reference Library Expansion Functions")
+        Proc("Embedding and Vectorization")
+        Ret("Query, Search, Retrieval Functions")
+        Reas("Base Domain Reasoning and Alignment")
+        Cont("Context-Grounded Fine-Tuning")
+    end
+    GPL("Deploy under GPL 3.0 license")
     subgraph Streamlit POC
-        F("UI Mockup")
-        G("Model Integration")
-        H("Dockerize")
+        UI("UI Mockup")
+        Opt("Model Quantization and Optimization")
+        Int("Model Integration")
+        Dock("Dockerize")
     end
     subgraph Flutter Module
-        I("Data Import &amp; Preprocessing in Dart")
-        J("Local Model Execution with tflite package")
-        K("Output Formatting &amp; Display")
+        Pre("Data Import &amp; Preprocessing in Dart")
+        Loc("Local Model Execution")
+        Out("Output Formatting &amp; Display")
     end
-    A --&gt; B
-    B --&gt; C
-    C --&gt; D
-    D --&gt; E
-    D --&gt; G
-    F --&gt; G
-    G --&gt; H
-    H --&gt; E
-    D --&gt; J
-    I --&gt; J
-    J --&gt; K
+    Dev --&gt; Fine
+    Fine --&gt; Eval
+    Open --&gt; Eval
+    Eval --&gt; Sel
+    Sel --&gt; Dom
+    Dom --&gt; On
+    On --&gt; Data
+    Data --&gt; Inp
+    Inp --&gt; Proc
+    Proc --&gt; Ret
+    Ret --&gt; Reas
+    Reas --&gt; Cont
+    Cont --&gt; GPL
+    Cont --&gt; UI
+    UI --&gt; Opt
+    Opt --&gt; Int
+    Int --&gt; Dock
+    Dock --&gt; GPL
+    Dock --&gt; Pre
+    Pre --&gt; Loc
+    Loc --&gt; Out
+    Out --&gt; GPL
 </pre>
 </div>
 <p></p></figure><p></p>
@@ -270,25 +293,34 @@ flowchart TD
 </div>
 </div>
 </section>
-<section id="model-development-and-export" class="level3">
-<h3 class="anchored" data-anchor-id="model-development-and-export">Model Development and Export</h3>
-<p>Each machine learning and AI model is developed independently as a standalone module to ensure ease of testing, rapid iteration, and separation of concerns.</p>
+<section id="model-fine-tuning-and-onnx-export" class="level3">
+<h3 class="anchored" data-anchor-id="model-fine-tuning-and-onnx-export">Model Fine-Tuning and ONNX Export</h3>
+<p>The core domain-specific language model is adapted and optimized for local, low-latency execution with reasoning and RAG support.</p>
 <ul>
-<li><p><strong>Environment:</strong> Models are developed using <strong>Google Colab</strong>.</p></li>
-<li><p><strong>Framework:</strong> TensorFlow is utilized for model training, evaluation, and optimization.</p></li>
-<li><p><strong>Optimization &amp; Export:</strong> Once trained, models are optimized for mobile and desktop on-device execution and exported into the lightweight <strong>TensorFlow Lite (.tflite)</strong> format. Trained models are available for integration into other applications under <strong>GNU Public License v3.0</strong>.</p></li>
+<li><p><strong>Domain Focus:</strong> Fine-tune and adapt an open-source language model specialized for public health and epidemiological reasoning.</p></li>
+<li><p><strong>RAG Integration:</strong> Embed an on-device Retrieval-Augmented Generation pipeline to ground reasoning against validated epidemiological literature and local case data.</p></li>
+<li><p><strong>Export &amp; Quantization:</strong> Export the model and retrieval pipelines into the open <strong>ONNX format</strong>, applying quantization to optimize memory usage and performance across desktop and mobile devices.</p></li>
+</ul>
+</section>
+<section id="containerized-streamlit-poc" class="level3">
+<h3 class="anchored" data-anchor-id="containerized-streamlit-poc">Containerized Streamlit POC</h3>
+<p>Prior to the full mobile and desktop rollout, a containerized prototype is constructed using <strong>Streamlit</strong> to validate workflows and user experience:</p>
+<ul>
+<li><p><strong>Rapid Prototyping:</strong> Build a web-based proof-of-concept to test local language model querying, RAG integration, and visual outputs with stakeholders.</p></li>
+<li><p><strong>Containerization:</strong> Package the Streamlit interface and quantized ONNX runtime inside a <strong>Docker container</strong> to ensure reproducible testing across different evaluation environments.</p></li>
+<li><p><strong>Workflow Validation:</strong> Gather user feedback on interactive reporting features—including dynamic maps, tables, and epidemic curves—to refine UI/UX specifications before native app development.</p></li>
 </ul>
 </section>
 <section id="flutter-and-dart-integration" class="level3">
 <h3 class="anchored" data-anchor-id="flutter-and-dart-integration">Flutter and Dart Integration</h3>
-<p>The core application is built using the <strong>Flutter</strong> framework, enabling a single codebase to deploy across Android, iOS, and Windows. For each machine learning function or utility module, a standardized, sequential process is followed within the <strong>Dart</strong> codebase:</p>
+<p>The core application is built using the <strong>Flutter</strong> framework, enabling a single codebase to deploy across Android, Windows, and Linux. For the local language model and RAG pipeline, a standardized process is followed within the Dart codebase:</p>
 <ul>
-<li><p><strong>Front-End Design:</strong> Develop the responsive front-end user interface components in <strong>Flutter</strong> to capture inputs (text, audio, images).</p></li>
+<li><p><strong>Front-End Design:</strong> Develop the responsive front-end user interface components in Flutter to capture inputs (text, audio, images).</p></li>
 <li><p><strong>Data Import &amp; Preprocessing:</strong> Write robust data ingestion and preprocessing handlers in <strong>Dart</strong> to prepare inputs for model compatibility.</p></li>
-<li><p><strong>Model Execution:</strong> Invoke the exported <strong>.tflite</strong> model locally using the tflite package for <strong>Dart</strong>, passing the preprocessed inputs to the model.</p></li>
+<li><p><strong>Model Execution:</strong> Invoke the quantized <strong>ONNX model</strong> locally using cross-platform ONNX Runtime bindings in Dart to run inferences and RAG retrieval strictly on-device.</p></li>
 <li><p><strong>Output Formatting:</strong> Capture the inference results, process and format them (generating charts, tables, maps, or textual decision support), and display them within the UI.</p></li>
 </ul>
-<p>This modular workflow is replicated dynamically for every machine learning model integrated into Arclight.</p>
+<p>This workflow ensures on-device reasoning and privacy preservation across all target platforms.</p>
 
 
 </section>
