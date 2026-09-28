@@ -57,7 +57,7 @@ config:
   layout: dagre
 ---
 flowchart TD
-    subgraph Retrieval Model Development
+    subgraph Model Development
         Dev("Pre-Training")
         Fine("Retrieval Fine-Tuning")
         Eval("Model Evaluation")

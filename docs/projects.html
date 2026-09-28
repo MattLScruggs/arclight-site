@@ -155,8 +155,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#technical-methodology-and-implementation" id="toc-technical-methodology-and-implementation" class="nav-link" data-scroll-target="#technical-methodology-and-implementation">Technical Methodology and Implementation</a>
   <ul class="collapse">
   <li><a href="#modular-process-flowchart" id="toc-modular-process-flowchart" class="nav-link" data-scroll-target="#modular-process-flowchart">Modular Process Flowchart</a></li>
-  <li><a href="#model-fine-tuning-and-onnx-export" id="toc-model-fine-tuning-and-onnx-export" class="nav-link" data-scroll-target="#model-fine-tuning-and-onnx-export">Model Fine-Tuning and ONNX Export</a></li>
-  <li><a href="#containerized-streamlit-poc" id="toc-containerized-streamlit-poc" class="nav-link" data-scroll-target="#containerized-streamlit-poc">Containerized Streamlit POC</a></li>
+  <li><a href="#model-development-and-onnx-export" id="toc-model-development-and-onnx-export" class="nav-link" data-scroll-target="#model-development-and-onnx-export">Model Development and ONNX Export</a></li>
+  <li><a href="#containerized-shiny-poc" id="toc-containerized-shiny-poc" class="nav-link" data-scroll-target="#containerized-shiny-poc">Containerized Shiny POC</a></li>
   <li><a href="#flutter-and-dart-integration" id="toc-flutter-and-dart-integration" class="nav-link" data-scroll-target="#flutter-and-dart-integration">Flutter and Dart Integration</a></li>
   </ul></li>
   </ul>
@@ -201,7 +201,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="our-solution" class="level2">
 <h2 class="anchored" data-anchor-id="our-solution">Our Solution</h2>
-<p>Arclight is an open-source, domain-specific reasoning model designed to empower epidemiologists and public health professionals with real-time decision support during outbreak investigations. The model is designed to run locally, on device via a cross-platform app, and incorporate reasoning and RAG capabilities built around the ONNX format and released across three key stages (open-source ONNX model, containerized Streamlit POC, and cross-platform Flutter app).</p>
+<p>Arclight is an open-source suite of NLP models designed to empower epidemiologists and public health professionals with real-time decision support during outbreak investigations. The models are designed to run locally, on device via a cross-platform app, replicating the functionality of the latest foundation models, but without the possibility of hallucination, PHI leakage, or data contamination.</p>
 <hr>
 </section>
 <section id="design-goals-and-exclusions" class="level2">
@@ -235,25 +235,13 @@ config:
   layout: dagre
 ---
 flowchart TD
-    subgraph Baseline Model Development
+    subgraph Model Development
         Dev("Pre-Training")
-        Fine("Early Fine-Tuning")
-        Open("Open-Source Model Comparison")
+        Fine("Retrieval Fine-Tuning")
         Eval("Model Evaluation")
-        Sel("Model Selection")
-        Dom("Domain-Specific Finetuning")
-        On("Final Evaluation")
-    end
-    subgraph Reasoning and RAG Capabilities
-        Data("Reference Data Curation and Cleaning")
-        Inp("Reference Library Expansion Functions")
-        Proc("Embedding and Vectorization")
-        Ret("Query, Search, Retrieval Functions")
-        Reas("Base Domain Reasoning and Alignment")
-        Cont("Context-Grounded Fine-Tuning")
     end
     GPL("Deploy under GPL 3.0 license")
-    subgraph Streamlit POC
+    subgraph Shiny POC
         UI("UI Mockup")
         Opt("Model Quantization and Optimization")
         Int("Model Integration")
@@ -266,18 +254,8 @@ flowchart TD
     end
     Dev --&gt; Fine
     Fine --&gt; Eval
-    Open --&gt; Eval
-    Eval --&gt; Sel
-    Sel --&gt; Dom
-    Dom --&gt; On
-    On --&gt; Data
-    Data --&gt; Inp
-    Inp --&gt; Proc
-    Proc --&gt; Ret
-    Ret --&gt; Reas
-    Reas --&gt; Cont
-    Cont --&gt; GPL
-    Cont --&gt; UI
+    Eval --&gt; GPL
+    Eval --&gt; UI
     UI --&gt; Opt
     Opt --&gt; Int
     Int --&gt; Dock
@@ -293,31 +271,30 @@ flowchart TD
 </div>
 </div>
 </section>
-<section id="model-fine-tuning-and-onnx-export" class="level3">
-<h3 class="anchored" data-anchor-id="model-fine-tuning-and-onnx-export">Model Fine-Tuning and ONNX Export</h3>
-<p>The core domain-specific language model is adapted and optimized for local, low-latency execution with reasoning and RAG support.</p>
+<section id="model-development-and-onnx-export" class="level3">
+<h3 class="anchored" data-anchor-id="model-development-and-onnx-export">Model Development and ONNX Export</h3>
+<p>The core encoder retrieval model is adapted and optimized for local, low-latency execution on device.</p>
 <ul>
-<li><p><strong>Domain Focus:</strong> Fine-tune and adapt an open-source language model specialized for public health and epidemiological reasoning.</p></li>
-<li><p><strong>RAG Integration:</strong> Embed an on-device Retrieval-Augmented Generation pipeline to ground reasoning against validated epidemiological literature and local case data.</p></li>
+<li><p><strong>Domain Focus:</strong> End-to-end domain specific training to optimize retrieval across keywords and semantic layers.</p></li>
 <li><p><strong>Export &amp; Quantization:</strong> Export the model and retrieval pipelines into the open <strong>ONNX format</strong>, applying quantization to optimize memory usage and performance across desktop and mobile devices.</p></li>
 </ul>
 </section>
-<section id="containerized-streamlit-poc" class="level3">
-<h3 class="anchored" data-anchor-id="containerized-streamlit-poc">Containerized Streamlit POC</h3>
-<p>Prior to the full mobile and desktop rollout, a containerized prototype is constructed using <strong>Streamlit</strong> to validate workflows and user experience:</p>
+<section id="containerized-shiny-poc" class="level3">
+<h3 class="anchored" data-anchor-id="containerized-shiny-poc">Containerized Shiny POC</h3>
+<p>Prior to the full mobile and desktop rollout, a containerized prototype is constructed using <strong>Shiny</strong> to validate workflows and user experience:</p>
 <ul>
-<li><p><strong>Rapid Prototyping:</strong> Build a web-based proof-of-concept to test local language model querying, RAG integration, and visual outputs with stakeholders.</p></li>
-<li><p><strong>Containerization:</strong> Package the Streamlit interface and quantized ONNX runtime inside a <strong>Docker container</strong> to ensure reproducible testing across different evaluation environments.</p></li>
+<li><p><strong>Rapid Prototyping:</strong> Build a web-based proof-of-concept to test local language model processing and visual outputs with stakeholders.</p></li>
+<li><p><strong>Containerization:</strong> Package the Shiny interface and quantized ONNX runtime inside a <strong>Docker container</strong> to ensure reproducible testing across different evaluation environments.</p></li>
 <li><p><strong>Workflow Validation:</strong> Gather user feedback on interactive reporting features—including dynamic maps, tables, and epidemic curves—to refine UI/UX specifications before native app development.</p></li>
 </ul>
 </section>
 <section id="flutter-and-dart-integration" class="level3">
 <h3 class="anchored" data-anchor-id="flutter-and-dart-integration">Flutter and Dart Integration</h3>
-<p>The core application is built using the <strong>Flutter</strong> framework, enabling a single codebase to deploy across Android, Windows, and Linux. For the local language model and RAG pipeline, a standardized process is followed within the Dart codebase:</p>
+<p>The core application is built using the <strong>Flutter</strong> framework, enabling a single codebase to deploy across Android, Windows, and Linux. For the local model integration, a standardized process is followed within the Dart codebase:</p>
 <ul>
 <li><p><strong>Front-End Design:</strong> Develop the responsive front-end user interface components in Flutter to capture inputs (text, audio, images).</p></li>
 <li><p><strong>Data Import &amp; Preprocessing:</strong> Write robust data ingestion and preprocessing handlers in <strong>Dart</strong> to prepare inputs for model compatibility.</p></li>
-<li><p><strong>Model Execution:</strong> Invoke the quantized <strong>ONNX model</strong> locally using cross-platform ONNX Runtime bindings in Dart to run inferences and RAG retrieval strictly on-device.</p></li>
+<li><p><strong>Model Execution:</strong> Invoke the quantized <strong>ONNX model</strong> locally using cross-platform ONNX Runtime bindings in Dart to run inferences strictly on-device.</p></li>
 <li><p><strong>Output Formatting:</strong> Capture the inference results, process and format them (generating charts, tables, maps, or textual decision support), and display them within the UI.</p></li>
 </ul>
 <p>This workflow ensures on-device reasoning and privacy preservation across all target platforms.</p>
