@@ -4,16 +4,16 @@ format: html
 ---
 
 ::: callout-note
-Arclight follows principles of MVP development and separation of concerns. The main Arclight model will be the initial release, developed, optimized, and made available in a standalone ONNX format. A quantized version will then be developed as an integrated Streamlit app packaged in a deployable Docket container. The fully integrated Flutter application will be the final release, initially targeting Android, Windows, and Linux systems.
+Arclight follows principles of MVP development and separation of concerns. The main Arclight model will be the initial release, developed, optimized, and made available in a standalone ONNX format. A quantized version will then be developed as an integrated Shiny app packaged in a deployable Docket container. The fully integrated Flutter application will be the final release, initially targeting Android, Windows, and Linux systems.
 :::
 
-## Phase 1: Model Development & Optimization (Google Colab)
+## Phase 1: Model Development & Optimization
 
-Train, validate, and optimize machine learning models within cloud notebook environments before exporting for on-device execution, publishing source code under an open-source license.
+Train, validate, and optimize machine learning models before exporting for on-device execution, publishing source code under an open-source license.
 
 ### Tasks:
 
-- [ ] Colab Model Development: Develop, train, and validate initial model inside Google Colab.
+- [ ] Baseline Model Development: Develop, train, and validate initial model
 
 - [ ] Optimization & Quantization: Apply post-training quantization and model compression techniques to minimize memory footprint and optimize execution speed for target end-user devices.
 
@@ -21,17 +21,17 @@ Train, validate, and optimize machine learning models within cloud notebook envi
 
 - [ ] Open-Source Licensing: Host model source code and assets on GitHub under the GNU General Public License v3.0 (GPL v3.0).
 
-## Phase 2: UI/UX Proof of Concept (Streamlit & Docker)
+## Phase 2: UI/UX Proof of Concept (Shiny & Docker)
 
 Prototype the user interface and validate operational workflows quickly through a web-based Proof of Concept (POC).
 
 ### Tasks:
 
-- [ ] Streamlit Prototype: Build a functional Streamlit interface to mock up layouts, data ingestion workflows, and visualization formats required for different end-use cases.
+- [ ] Shiny Prototype: Build a functional Shiny interface to mock up layouts, data ingestion workflows, and visualization formats required for different end-use cases.
 
-- [ ] Workflow Validation: Test end-to-end data processing, user interaction flows, and structured decision-support outputs within the Streamlit workspace.
+- [ ] Workflow Validation: Test end-to-end data processing, user interaction flows, and structured decision-support outputs within the Shiny workspace.
 
-- [ ] Docker Containerization: Package the Streamlit application into a Docker container for isolated testing, streamlined sharing, and collecting feedback from epidemiologists and stakeholders.
+- [ ] Docker Containerization: Package the Shiny application into a Docker container for isolated testing, streamlined sharing, and collecting feedback from epidemiologists and stakeholders.
 
 ## Phase 3: Flutter Application Development & Integration
 
