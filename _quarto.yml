@@ -6,6 +6,7 @@ website:
   favicon: images/arclight-logo.jpg
   navbar:
     logo: images/arclight-logo.jpg
+    background: primary
     left:
       - text: Home
         href: index.qmd
