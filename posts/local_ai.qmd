@@ -3,6 +3,7 @@ title: "The Frontier Fallacy"
 author: "Matt Scruggs, MPH, MSDA"
 date: "10/13/2026"
 format: html
+image: images/post1_image.jpeg
 ---
 
 ### Why Healthcare Doesn’t Need Trillion-Parameter Models
