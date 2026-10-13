@@ -6,7 +6,6 @@ website:
   favicon: images/arclight-logo.jpg
   navbar:
     logo: images/arclight-logo.jpg
-    background: primary
     left:
       - text: Home
         href: index.qmd
@@ -28,9 +27,7 @@ website:
 
 format:
   html:
-    theme: 
-      light: lumen
-      dark: lumen
+    theme: cosmo
     css: styles.css
     toc: true
     mermaid:
