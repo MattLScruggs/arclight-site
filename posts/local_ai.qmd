@@ -3,7 +3,6 @@ title: "The Frontier Fallacy"
 format: html
 ---
 
-
 # Why Healthcare Doesn’t Need Trillion-Parameter Models
 
 When a health tech organization decides to implement artificial intelligence today, the default instinct is almost always to reach for the biggest cloud-hosted engine on the market. These massive, multi-billion and trillion-parameter frontier systems are engineering marvels, capable of composing sonnets, answering trivia, and simulating natural human banter. Yet when deployed into clinical environments, this broad capability introduces severe operational baggage. Healthcare workflows rarely demand an open-ended conversationalist; they require precise, repetitive execution across structured data tasks. Piped through external cloud APIs, these generalist giants saddle health systems with unpredictable monthly bills, noticeable seconds of network latency, and persistent regulatory anxiety over data exposure and HIPAA compliance. Paying for an ocean of world knowledge when you only need a pipeline to parse medical records is an expensive mismatch.
