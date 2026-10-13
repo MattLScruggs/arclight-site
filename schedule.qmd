@@ -1,10 +1,6 @@
 ---
 title: "The Arclight Project Roadmap"
-format:
-    html:
-        theme: 
-            light: lumen
-            dark: lumen
+format: html
 ---
 
 ::: callout-note
