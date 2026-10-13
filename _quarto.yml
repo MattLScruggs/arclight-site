@@ -9,10 +9,12 @@ website:
     left:
       - text: Home
         href: index.qmd
-      - text: About Arclight
-        href: projects.qmd
-      - text: Project Roadmap
-        href: schedule.qmd
+      - text: Arclight-Epi Model
+        menu:
+          - text: Arclight-Epi Model Overview
+            href: projects.qmd
+          - text: Arclight-Epi Model Roadmap
+            href: schedule.qmd
     right:
       - text: About
         href: about.qmd
