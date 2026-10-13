@@ -3,12 +3,14 @@ title: "The Frontier Fallacy"
 author: "Matt Scruggs, MPH, MSDA"
 date: "10/13/2026"
 format: html
-image: images/post1_image.jpeg
+image: "images/post1_image.jpeg"
 ---
 
 ### Why Healthcare Doesn’t Need Trillion-Parameter Models
 
 When a health tech organization decides to implement artificial intelligence today, the default instinct is almost always to reach for the biggest cloud-hosted engine on the market. These massive, multi-billion and trillion-parameter frontier systems are engineering marvels, capable of composing sonnets, answering trivia, and simulating natural human banter. Yet when deployed into clinical environments, this broad capability introduces severe operational baggage. Healthcare workflows rarely demand an open-ended conversationalist; they require precise, repetitive execution across structured data tasks. Piped through external cloud APIs, these generalist giants saddle health systems with unpredictable monthly bills, noticeable seconds of network latency, and persistent regulatory anxiety over data exposure and HIPAA compliance. Paying for an ocean of world knowledge when you only need a pipeline to parse medical records is an expensive mismatch.
+
+![Don't be this guy.](images/post1_image.jpeg)
 
 The path forward is not to abandon modern language processing, but to rethink its scale entirely. Rather than relying on massive cloud models designed to do everything passably well, engineering teams should turn toward small, specialized models—architectures under 3 billion parameters—trained or tuned specifically on biomedical schemas and clinical terminology. You do not need a model that knows 19th-century history to extract a patient’s symptom timeline or parse an unstructured lab intake form. By scoping the model’s linguistic focus strictly to the language of medicine and constraining its output to rigid formats like JSON, a compact engine running locally can easily out-execute a distant supercomputer. It treats artificial intelligence like a purpose-built instrument rather than an unconstrained chatbot.
 
