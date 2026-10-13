@@ -4,7 +4,9 @@ subtitle: "Building local AI/ML solutions for public health"
 format:
   html:
     toc: true
-    theme: lumen
+    theme: 
+        light: lumen
+        dark: lumen
     code-fold: true
 ---
 
