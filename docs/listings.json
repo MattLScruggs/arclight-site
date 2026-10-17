@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/offline_ai_for_epi.html",
       "/posts/local_ai.html"
     ]
   }

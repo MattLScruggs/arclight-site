@@ -3,10 +3,10 @@ title: "Zero-Trust AI"
 author: "Matt Scruggs, MPH, MSDA"
 date: "10/17/2026"
 format: html
-image: "/images/post2_image.jpeg"
+image: "/images/post2_image.jpg"
 ---
 
-### Architecting Offline Decision Support for Field Epidemiology
+### The Necessity for Offline Decision Support for Field Epidemiology
 
 The most critical public health interventions rarely happen in sterile, climate-controlled environments equipped with fiber-optic internet. They unfold in rural clinics, remote border settlements, and post-disaster zones where a stable cellular connection is an unpredictable luxury. Despite this operational reality, the vast majority of modern data surveillance and clinical decision-support tools remain heavily tethered to the cloud. When developers build applications that require a continuous ping to a centralized server or a commercial artificial intelligence endpoint, they inadvertently build a glass cannon. The moment the local network drops or bandwidth throttles, the application immediately freezes. Epidemiologists and field nurses are instantly forced to abandon their digital ecosystems and revert to chaotic paper forms, manual transcription, and fragmented physical line-lists. This technological regression occurs during the exact moments when rapid, accurate data processing is most critical for outbreak containment and emergency resource allocation. A system that only operates smoothly under optimal infrastructure conditions is fundamentally broken for the realities of field medicine.
 
