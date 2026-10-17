@@ -9,13 +9,13 @@ website:
     left:
       - text: Home
         href: index.qmd
-      - text: Updates
+      - text: Notes from the Field
         href: blog.qmd
-      - text: Arclight-Epi Model
+      - text: Arclight-FEBE Model
         menu:
-          - text: Arclight-Epi Model Overview
+          - text: Arclight-FEBE Model Overview
             href: projects.qmd
-          - text: Arclight-Epi Model Roadmap
+          - text: Arclight-FEBE Model Roadmap
             href: schedule.qmd
     right:
       - text: About
