@@ -1,6 +1,6 @@
 ---
 title: "Welcome to the Arclight Project"
-image: images/SnowMap_Points.png
+image: images/profile_photo_bw.jpg
 about:
   template: jolla
   image-width: 50%
