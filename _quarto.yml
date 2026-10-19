@@ -11,14 +11,8 @@ website:
         href: index.qmd
       - text: Notes from the Field
         href: blog.qmd
-      - text: Arclight-FEBE v1.0
+      - text: Arclight-FEBE v1.0 Model Documentation
         href: exec_summary.qmd
-        menu:
-          - text: Development Plan
-            href: 01 - schedule.qmd
-          - text: Model Architecture
-            href: 02 - architecture.qmd
-          
     right:
       - text: About Me
         href: about.qmd
