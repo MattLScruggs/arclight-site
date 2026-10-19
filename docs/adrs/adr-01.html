@@ -141,8 +141,20 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#selection-of-local-first-slm-architecture-over-commercial-cloud-apis" id="toc-selection-of-local-first-slm-architecture-over-commercial-cloud-apis" class="nav-link active" data-scroll-target="#selection-of-local-first-slm-architecture-over-commercial-cloud-apis">Selection of Local-First SLM Architecture Over Commercial Cloud APIs</a>
+  <ul class="collapse">
+  <li><a href="#context-and-problem-statement" id="toc-context-and-problem-statement" class="nav-link" data-scroll-target="#context-and-problem-statement">1. Context and Problem Statement</a></li>
+  <li><a href="#decision" id="toc-decision" class="nav-link" data-scroll-target="#decision">2. Decision</a></li>
+  <li><a href="#rationale" id="toc-rationale" class="nav-link" data-scroll-target="#rationale">3. Rationale</a></li>
+  <li><a href="#consequences-and-mitigations" id="toc-consequences-and-mitigations" class="nav-link" data-scroll-target="#consequences-and-mitigations">4. Consequences and Mitigations</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -166,8 +178,42 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="selection-of-local-first-slm-architecture-over-commercial-cloud-apis" class="level2">
+<h2 class="anchored" data-anchor-id="selection-of-local-first-slm-architecture-over-commercial-cloud-apis">Selection of Local-First SLM Architecture Over Commercial Cloud APIs</h2>
+<p><strong>Date:</strong> October 2026</p>
+<section id="context-and-problem-statement" class="level3">
+<h3 class="anchored" data-anchor-id="context-and-problem-statement">1. Context and Problem Statement</h3>
+<p>The Arclight-Epi project requires a natural language processing pipeline capable of extracting structured triage line-lists from unstructured epidemiological field data. This tool is designed for deployment in public health settings, which introduces strict operational constraints. Relying on commercial, cloud-based Large Language Model (LLM) APIs introduces unacceptable risks regarding Protected Health Information (PHI) governance, data sovereignty, and variable per-token inference costs. Furthermore, field epidemiologists often operate in environments with limited or no internet connectivity, rendering cloud-dependent architectures unreliable.</p>
+</section>
+<section id="decision" class="level3">
+<h3 class="anchored" data-anchor-id="decision">2. Decision</h3>
+<p>We will implement a local-first, edge-deployed architecture utilizing a sub-3B parameter Small Language Model (SLM) in quantized GGUF format. The model will execute entirely offline on commodity hardware to perform zero-shot or few-shot structured data extraction.</p>
+</section>
+<section id="rationale" class="level3">
+<h3 class="anchored" data-anchor-id="rationale">3. Rationale</h3>
+<ul>
+<li><p><strong>Data Privacy &amp; Security By Design:</strong> Executing the model locally ensures that zero PHI leaves the host machine. This bypasses the need for complex Business Associate Agreements (BAAs) with external cloud providers and inherently complies with HIPAA and local data sovereignty laws.</p></li>
+<li><p><strong>Operational Resilience:</strong> A fully offline architecture guarantees 100% uptime for field operatives in remote or undeveloped settings, removing network latency and connectivity as points of failure.</p></li>
+<li><p><strong>Cost Containment:</strong> By avoiding commercial API calls, the enterprise avoids runaway inference costs. The compute burden is shifted to existing edge hardware (e.g., standard laptops), reducing ongoing operational expenditures to zero.</p></li>
+<li><p><strong>Right-Sizing Compute:</strong> Triage data extraction is a bounded, specific task. Deploying a massive frontier model (e.g., 70B+ parameters) is architecturally bloated for this use case. A 1.5B to 3B parameter model provides sufficient linguistic capability while fitting comfortably within the memory constraints of a standard CPU/RAM footprint.</p></li>
+</ul>
+</section>
+<section id="consequences-and-mitigations" class="level3">
+<h3 class="anchored" data-anchor-id="consequences-and-mitigations">4. Consequences and Mitigations</h3>
+<ul>
+<li><p><strong>Trade-off: Reduced Generalized Reasoning:</strong> Small models lack the broad reasoning capabilities of frontier models.</p>
+<ul>
+<li>Mitigation: We will utilize strict constrained decoding (forcing the model to output specific JSON/CSV schemas) and specialized prompt engineering to narrow the model’s focus strictly to the extraction task.</li>
+</ul></li>
+<li><p><strong>Trade-off: Evaluation Complexity:</strong> Ensuring clinical accuracy without a massive parameter count requires rigorous validation.</p>
+<ul>
+<li>Mitigation: We will develop a comprehensive, offline evaluation harness prior to deployment to benchmark extraction accuracy, measure missingness diagnostics, and quantify hallucination rates.</li>
+</ul></li>
+</ul>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

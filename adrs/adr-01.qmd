@@ -2,3 +2,35 @@
 title: "Architecture Decision Record (ADR) 001"
 format: html
 ---
+
+## Selection of Local-First SLM Architecture Over Commercial Cloud APIs
+
+**Date:** October 2026
+
+### 1. Context and Problem Statement
+
+The Arclight-Epi project requires a natural language processing pipeline capable of extracting structured triage line-lists from unstructured epidemiological field data. This tool is designed for deployment in public health settings, which introduces strict operational constraints. Relying on commercial, cloud-based Large Language Model (LLM) APIs introduces unacceptable risks regarding Protected Health Information (PHI) governance, data sovereignty, and variable per-token inference costs. Furthermore, field epidemiologists often operate in environments with limited or no internet connectivity, rendering cloud-dependent architectures unreliable.
+
+### 2. Decision
+
+We will implement a local-first, edge-deployed architecture utilizing a sub-3B parameter Small Language Model (SLM) in quantized GGUF format. The model will execute entirely offline on commodity hardware to perform zero-shot or few-shot structured data extraction.
+
+### 3. Rationale
+
+- **Data Privacy & Security By Design:** Executing the model locally ensures that zero PHI leaves the host machine. This bypasses the need for complex Business Associate Agreements (BAAs) with external cloud providers and inherently complies with HIPAA and local data sovereignty laws.
+
+- **Operational Resilience:** A fully offline architecture guarantees 100% uptime for field operatives in remote or undeveloped settings, removing network latency and connectivity as points of failure.
+
+- **Cost Containment:** By avoiding commercial API calls, the enterprise avoids runaway inference costs. The compute burden is shifted to existing edge hardware (e.g., standard laptops), reducing ongoing operational expenditures to zero.
+
+- **Right-Sizing Compute:** Triage data extraction is a bounded, specific task. Deploying a massive frontier model (e.g., 70B+ parameters) is architecturally bloated for this use case. A 1.5B to 3B parameter model provides sufficient linguistic capability while fitting comfortably within the memory constraints of a standard CPU/RAM footprint.
+
+### 4. Consequences and Mitigations
+
+- **Trade-off: Reduced Generalized Reasoning:** Small models lack the broad reasoning capabilities of frontier models.
+
+  - Mitigation: We will utilize strict constrained decoding (forcing the model to output specific JSON/CSV schemas) and specialized prompt engineering to narrow the model's focus strictly to the extraction task.
+
+- **Trade-off: Evaluation Complexity:** Ensuring clinical accuracy without a massive parameter count requires rigorous validation.
+
+  - Mitigation: We will develop a comprehensive, offline evaluation harness prior to deployment to benchmark extraction accuracy, measure missingness diagnostics, and quantify hallucination rates.
