@@ -1,8 +1,0 @@
----
-title: "00 - Log of Architectural Decision Records"
-format: html
-listing:
-  contents: adrs
-  type: table
----
-

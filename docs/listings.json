@@ -9,8 +9,11 @@
   {
     "listing": "/exec_summary.html",
     "items": [
-      "/febe-docs/01 - schedule.html",
-      "/febe-docs/02 - architecture.html"
+      "/adrs/adr-01.html"
     ]
+  },
+  {
+    "listing": "/febe-docs/00 - ADR log.html",
+    "items": []
   }
 ]

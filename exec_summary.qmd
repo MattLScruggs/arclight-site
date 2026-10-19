@@ -5,7 +5,7 @@ format:
   html:
     toc: true
 listing:
-  contents: febe-docs
+  contents: adrs
   type: table
 ---
 
@@ -40,3 +40,16 @@ Specific Arclight functions will evolve over time, but will generally will be de
 - Developing etiological hypotheses based on observed notes and reference data.
 
 Arclight deployment will include only Android, Linux, and Windows devices. Model performance will be constrained by the demands of on-device processing, to include available modules in the required tech stack. Arclight will not replace established decision support tools used for policy development, outbreak forecasting, or other use cases requiring large data sets and server-grade processing power; rather, it fills a gap at the local level.
+
+------------------------------------------------------------------------
+
+## Detailed Documentation
+
+For detailed information on the development schedule, data selection, pipeline, ingestion, custom tokenizer, model architecture, or other technical details, consult the following documents.
+
+#### 1. [Development Schedule](febe-docs/schedule.qmd)
+#### 2. [Model Architecture](febe-docs/architecture.qmd)
+
+------------------------------------------------------------------------
+
+## Architectural Decision Log
