@@ -5,7 +5,7 @@ about:
   image: images/profile_photo_bw.jpg
 ---
 
-Hi, I'm Matt Scruggs, designer and maintainer of the Arclight engine. I'm an epidemiologist and data science professional passionate about solving humanity's toughest problems with our best technology.
+Hi, I'm Matt Scruggs. I'm a data science professional and epidemiologist passionate about solving humanity's toughest problems with our best technology.
 
 In my 20 years of data science experience, I've designed solutions for the automotive, consumer retail, insurance, banking, pharmaceutical, and healthcare industries, and reported directly to C-level executives to turn strategic imperatives into operational tools and capabilities.
 

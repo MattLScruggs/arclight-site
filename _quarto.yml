@@ -11,14 +11,15 @@ website:
         href: index.qmd
       - text: Notes from the Field
         href: blog.qmd
-      - text: Arclight-FEBE Model
+      - text: Arclight-FEBE v1.0
+        href: exec_summary.qmd
         menu:
-          - text: Arclight-FEBE Model Overview
+          - text: Overview
             href: projects.qmd
-          - text: Arclight-FEBE Model Roadmap
+          - text: Development Plan
             href: schedule.qmd
     right:
-      - text: About
+      - text: About Me
         href: about.qmd
       - icon: linkedin
         href: https://www.linkedin.com/in/learnaboutmattscruggs/
