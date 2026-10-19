@@ -116,7 +116,7 @@
     "href": "exec_summary.html#detailed-documentation",
     "title": "Arclight-FEBE v1.0",
     "section": "Detailed Documentation",
-    "text": "Detailed Documentation\nFor detailed information on the development schedule, data selection, pipeline, ingestion, custom tokenizer, model architecture, or other technical details, consult the following documents.\n\n1. Development Schedule\n\n\n2. Model Architecture"
+    "text": "Detailed Documentation\nFor detailed information on the development schedule, data selection, pipeline, ingestion, custom tokenizer, model architecture, or other technical details, consult the following documents.\n\n1. Development Schedule\nThis section will detail the key project timelines, critical engineering milestones, and phased rollout targets for field deployment.\n\n\n2. Functional Requirements\n\n\n3. Data Pipeline and Curation\n\n\n4. Custom Tokenization\n\n\n5. Model Architecture\n\n\n6. Evaluation Framework\n\n\n7. Training and Optimization"
   },
   {
     "objectID": "exec_summary.html#architectural-decision-log",

@@ -47,8 +47,26 @@ Arclight deployment will include only Android, Linux, and Windows devices. Model
 
 For detailed information on the development schedule, data selection, pipeline, ingestion, custom tokenizer, model architecture, or other technical details, consult the following documents.
 
-#### 1. [Development Schedule](febe-docs/schedule.qmd)
-#### 2. [Model Architecture](febe-docs/architecture.qmd)
+#### 1. Development Schedule
+This section will detail the key project timelines, critical engineering milestones, and phased rollout targets for field deployment.
+
+#### 2. Functional Requirements
+This section will detail the core functional capabilities of the platform, including offline data ingestion, automated query processing, and localized reporting for field operations.
+
+#### 3. Data Pipeline and Curation
+This section will detail the offline pipeline, specifically focusing on the integration of synthetic textbook pretraining data, offline Wikipedia parsing, and the use of MinHash LSH for text deduplication to ensure data quality.
+
+#### 4. Custom Tokenization
+This section will outline the design and training of a custom Byte-Pair Encoding (BPE) tokenizer optimized specifically for epidemiological terminology, addressing the vocabulary limitations of off-the-shelf generalist models.
+
+#### 5. Model Architecture
+This section will provide the neural network specifications engineered to keep the model under the 1B parameter threshold, ensuring stable offline execution on standard field epidemiology hardware.
+
+#### 6. Evaluation Framework
+This section will define the benchmarking strategy prior to deployment, focusing on missingness diagnostics, hallucination rates, and clinical accuracy for human-in-the-loop validation.
+
+#### 7. Training and Optimization
+This section will outline the distributed training schedule, loss functions, and hardware-specific quantization strategies used to optimize training convergence and inference speed under limited computational resources.
 
 ------------------------------------------------------------------------
 
