@@ -11,9 +11,5 @@
     "items": [
       "/adrs/adr-01.html"
     ]
-  },
-  {
-    "listing": "/febe-docs/00 - ADR log.html",
-    "items": []
   }
 ]
