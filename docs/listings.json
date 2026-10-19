@@ -5,5 +5,12 @@
       "/posts/offline_ai_for_epi.html",
       "/posts/local_ai.html"
     ]
+  },
+  {
+    "listing": "/exec_summary.html",
+    "items": [
+      "/febe-docs/01 - schedule.html",
+      "/febe-docs/02 - architecture.html"
+    ]
   }
 ]

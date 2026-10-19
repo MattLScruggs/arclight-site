@@ -1,5 +1,5 @@
 ---
-title: "Architectural Design"
+title: "02 - Architectural Design"
 format:
   html:
     toc: true
