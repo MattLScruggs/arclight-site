@@ -1,0 +1,4 @@
+---
+title: "Architecture Decision Record (ADR) 001"
+format: html
+---

@@ -3,6 +3,9 @@ title: "exec_summary"
 format: 
   html:
     toc: true
+listing:
+  contents: febe-docs
+  type: table
 ---
 
 ## The Problem

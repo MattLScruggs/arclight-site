@@ -14,10 +14,11 @@ website:
       - text: Arclight-FEBE v1.0
         href: exec_summary.qmd
         menu:
-          - text: Overview
-            href: projects.qmd
           - text: Development Plan
-            href: schedule.qmd
+            href: 01 - schedule.qmd
+          - text: Model Architecture
+            href: 02 - architecture.qmd
+          
     right:
       - text: About Me
         href: about.qmd
