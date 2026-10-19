@@ -7,6 +7,13 @@
     ]
   },
   {
+    "listing": "/index.html",
+    "items": [
+      "/posts/offline_ai_for_epi.html",
+      "/posts/local_ai.html"
+    ]
+  },
+  {
     "listing": "/exec_summary.html",
     "items": [
       "/adrs/adr-01.html"

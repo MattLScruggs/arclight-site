@@ -1,12 +1,22 @@
 ---
-title: "Welcome to the Arclight Project"
+title: "Hi, I'm Matt Scruggs, MPH, MSDA"
+pagetitle: "Matt Scruggs, Data Scientist"
 image: images/profile_photo_bw.jpg
 about:
   template: jolla
-  image-width: 50%
+  image-width: 25%
   image-shape: rectangle
+listing: 
+    contents: posts
+    sort: "date desc"
+    type: default
 ---
 
-Arclight is an open-source suite of NLP models designed to be deployed on device via a cross-platform app. Arclight is designed for use by epidemiologists, clinicians, and public health personnel investigating infectious disease outbreaks in novel populations and locations.
+I'm a data science professional that's passionate about using machine learning and artificial intelligence to combat infectious disease. I hold a Master's degree in Public Health, with a post-graduate certification in Epidemiology, as well as a Master's degree in Data Analytics, with a post-graduate certification in Machine Learning.
 
-Whether the health emergency is a new outbreak of a bacterial infection, a novel virus, a drug-resistant fungus, an environmental toxin, or a bioterror attack, the first contact between pathogen and the public health system will be the outbreak investigation conducted by local health departments. The Arclight application provides front line public health professionals with actionable decision support based on the latest advances in local artificial intelligence.
+
+### Latest Articles 
+
+----------------------------------------------------------
+
+

@@ -1,8 +1,9 @@
 ---
-title: "About the Developer"
+title: "About Matt Scruggs"
 about:
   template: trestles
-  image: images/professional_picture.jpg
+  image: images/professional-picture.jpg
+  image-width: 75%
 ---
 
 Hi, I'm Matt Scruggs. I'm a data science professional and epidemiologist passionate about solving humanity's toughest problems with our best technology.
