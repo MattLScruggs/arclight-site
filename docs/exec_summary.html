@@ -271,21 +271,27 @@ window.Quarto = {
 </section>
 <section id="functional-requirements" class="level4">
 <h4 class="anchored" data-anchor-id="functional-requirements">2. Functional Requirements</h4>
+<p>This section will detail the core functional capabilities of the platform, including offline data ingestion, automated query processing, and localized reporting for field operations.</p>
 </section>
 <section id="data-pipeline-and-curation" class="level4">
 <h4 class="anchored" data-anchor-id="data-pipeline-and-curation">3. Data Pipeline and Curation</h4>
+<p>This section will detail the offline pipeline, specifically focusing on the integration of synthetic textbook pretraining data, offline Wikipedia parsing, and the use of MinHash LSH for text deduplication to ensure data quality.</p>
 </section>
 <section id="custom-tokenization" class="level4">
 <h4 class="anchored" data-anchor-id="custom-tokenization">4. Custom Tokenization</h4>
+<p>This section will outline the design and training of a custom Byte-Pair Encoding (BPE) tokenizer optimized specifically for epidemiological terminology, addressing the vocabulary limitations of off-the-shelf generalist models.</p>
 </section>
 <section id="model-architecture" class="level4">
 <h4 class="anchored" data-anchor-id="model-architecture">5. Model Architecture</h4>
+<p>This section will provide the neural network specifications engineered to keep the model under the 1B parameter threshold, ensuring stable offline execution on standard field epidemiology hardware.</p>
 </section>
 <section id="evaluation-framework" class="level4">
 <h4 class="anchored" data-anchor-id="evaluation-framework">6. Evaluation Framework</h4>
+<p>This section will define the benchmarking strategy prior to deployment, focusing on missingness diagnostics, hallucination rates, and clinical accuracy for human-in-the-loop validation.</p>
 </section>
 <section id="training-and-optimization" class="level4">
 <h4 class="anchored" data-anchor-id="training-and-optimization">7. Training and Optimization</h4>
+<p>This section will outline the distributed training schedule, loss functions, and hardware-specific quantization strategies used to optimize training convergence and inference speed under limited computational resources.</p>
 <hr>
 </section>
 </section>
