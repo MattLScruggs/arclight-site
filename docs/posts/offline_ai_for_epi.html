@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2026-10-10">
 
-<title>Zero-Trust AI</title>
+<title>Going Where You Are Needed</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -142,7 +142,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-necessity-for-offline-decision-support-for-field-epidemiology" id="toc-the-necessity-for-offline-decision-support-for-field-epidemiology" class="nav-link active" data-scroll-target="#the-necessity-for-offline-decision-support-for-field-epidemiology">The Necessity for Offline Decision Support for Field Epidemiology</a></li>
+  <li><a href="#the-necessity-for-offline-decision-support-for-field-epidemiology" id="toc-the-necessity-for-offline-decision-support-for-field-epidemiology" class="nav-link active" data-scroll-target="#the-necessity-for-offline-decision-support-for-field-epidemiology">The Necessity for Offline Decision Support for Field Epidemiology</a>
+  <ul class="collapse">
+  <li><a href="#lab-meet-real-world" id="toc-lab-meet-real-world" class="nav-link" data-scroll-target="#lab-meet-real-world">Lab, Meet Real World</a></li>
+  <li><a href="#zero-trust-ai" id="toc-zero-trust-ai" class="nav-link" data-scroll-target="#zero-trust-ai">Zero-Trust AI</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -151,7 +155,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Zero-Trust AI</h1>
+<h1 class="title">Going Where You Are Needed</h1>
+<p class="subtitle lead">Why Epidemiology Needs Offline Capability</p>
 </div>
 
 
@@ -174,19 +179,25 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="the-necessity-for-offline-decision-support-for-field-epidemiology" class="level3">
-<h3 class="anchored" data-anchor-id="the-necessity-for-offline-decision-support-for-field-epidemiology">The Necessity for Offline Decision Support for Field Epidemiology</h3>
+<section id="the-necessity-for-offline-decision-support-for-field-epidemiology" class="level2">
+<h2 class="anchored" data-anchor-id="the-necessity-for-offline-decision-support-for-field-epidemiology">The Necessity for Offline Decision Support for Field Epidemiology</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../images/post2_image.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Field epidemiologist using a local AI system."></p>
 </figure>
 </div>
+<section id="lab-meet-real-world" class="level3">
+<h3 class="anchored" data-anchor-id="lab-meet-real-world">Lab, Meet Real World</h3>
 <p>The most critical public health interventions rarely happen in sterile, climate-controlled environments equipped with fiber-optic internet. They unfold in rural clinics, remote border settlements, and post-disaster zones where a stable cellular connection is an unpredictable luxury. Despite this operational reality, the vast majority of modern data surveillance and clinical decision-support tools remain heavily tethered to the cloud. When developers build applications that require a continuous ping to a centralized server or a commercial artificial intelligence endpoint, they inadvertently build a glass cannon. The moment the local network drops or bandwidth throttles, the application immediately freezes. Epidemiologists and field nurses are instantly forced to abandon their digital ecosystems and revert to chaotic paper forms, manual transcription, and fragmented physical line-lists. This technological regression occurs during the exact moments when rapid, accurate data processing is most critical for outbreak containment and emergency resource allocation. A system that only operates smoothly under optimal infrastructure conditions is fundamentally broken for the realities of field medicine.</p>
 <p>The architectural countermeasure to this systemic fragility is the deployment of local-first, quantized machine learning. Rather than relying on a distant, trillion-parameter supercomputer to process clinical narratives, health tech teams must architect pipelines capable of running entirely on standard, consumer-grade laptops and ruggedized edge hardware. This resilience is achieved through the use of “small” language models—compact, highly efficient engines typically under three billion parameters—that have been mathematically compressed to fit comfortably within the limited memory footprint of a standard field tablet. These models are explicitly stripped of generalized internet trivia and open-ended conversational fluff. Instead, they are strictly specialized and tuned for the precise extraction of medical symptoms, exposure timelines, geographic risk factors, and demographic variables from unstructured text. By housing this computational intelligence directly on the physical hardware, the application becomes completely self-sufficient. It parses messy field interviews, structures the raw data into rigid, analytical formats, and cross-references jurisdictional case definitions without ever making a single call to a remote server.</p>
+</section>
+<section id="zero-trust-ai" class="level3">
+<h3 class="anchored" data-anchor-id="zero-trust-ai">Zero-Trust AI</h3>
 <p>Shifting this computational burden directly to the edge fundamentally transforms both the reliability and security of field operations. Epidemiologists can synthesize complex triage logs and generate structured, actionable data at the point of care with zero interruption. The diagnostic and analytical work continues seamlessly, entirely immune to regional network blackouts or degraded local infrastructure. Beyond this immediate operational continuity, the disconnected architecture solves one of the most persistent and expensive bottlenecks in global medical technology: data privacy and regulatory compliance. Because the artificial intelligence inference happens entirely locally on the device, it establishes a true zero-trust privacy perimeter. Sensitive patient details, identifiable demographic markers, and protected health information never leave the local hard drive. By physically eliminating the transit of data to third-party cloud providers, health organizations eradicate massive compliance hurdles, eliminate recurring remote toll costs, and close severe cyber vulnerabilities, achieving absolute, uncompromised data residency by default.</p>
 <p>True operational resilience dictates that critical surveillance systems must remain fully functional when the external network inevitably goes down. Building sustainable, scalable artificial intelligence for public health requires treating internet connectivity as an unpredictable variable, not a baseline engineering guarantee.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
