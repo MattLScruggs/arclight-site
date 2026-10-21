@@ -14,9 +14,8 @@ listing:
 
 I'm a data science professional that's passionate about using machine learning and artificial intelligence to combat infectious disease. I hold a Master's degree in Public Health, with a post-graduate certification in Epidemiology, as well as a Master's degree in Data Analytics, with a post-graduate certification in Machine Learning.
 
+Outside of my professional responsibilities, I'm designing Arclight-FEBE, a small language model designed to run locally for use in the epidemiology domain. This model serves as the proof of concept for Arclight, a reference architecture for small language models running locally on edge devices and designed to handle private data for restricted domains or personal use. More about Arclight [here](/posts/why_arclight.qmd), and the Arclight-FEBE implementation [here](/exec_summary.qmd).
 
-### Latest Articles 
+### Latest Articles
 
-----------------------------------------------------------
-
-
+------------------------------------------------------------------------
