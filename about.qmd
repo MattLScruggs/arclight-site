@@ -8,8 +8,10 @@ about:
 
 Hi, I'm Matt Scruggs. I'm a data science professional and epidemiologist passionate about solving humanity's toughest problems with our best technology.
 
-In my 20 years of data science experience, I've designed solutions for the automotive, consumer retail, insurance, banking, pharmaceutical, and healthcare industries, and reported directly to C-level executives to turn strategic imperatives into operational tools and capabilities.
+As a data science leader and builder, I translate strategic vision into scalable machine learning and AI implementations across industries such as automotive, pharmaceuticals, insurance, and banking. My expertise lies in deploying high-impact applications from concept to production, empowering multi-disciplinary teams to deliver robust, scalable solutions.
 
-Complex domains and regulatory environments are familiar territory. I've built several teams and data science departments from the ground up, focusing on scrappy, high-ROI solutions to prove value, which turn into polished and reliable enterprise assets.
+Over more than a decade of technical leadership, I have built and scaled high-performing data science and analytics teams from the ground up within both greenfield and highly regulated environments. Operating as a player-coach who bridges executive roadmapping with direct architectural implementation, I focus on transforming ambiguous challenges into deployable intelligence systems that drive measurable business outcomes while maintaining rigorous governance.
 
-I hold a Master of Science in Data Analytics, a Master of Public Health, and Post-Graduate Certifications in Machine Learning and Epidemiology.
+My academic background bridges public health and advanced analytics. I hold a Master’s degree in Public Health with a post-graduate certification in Epidemiology, as well as a Master’s degree in Data Analytics with a post-graduate certification in Machine Learning, uniting a deep passion for using artificial intelligence to combat infectious disease.
+
+Outside of my core professional responsibilities, I spearhead independent research in local-first edge AI architectures for field epidemiology. This includes developing Arclight-FEBE, an offline, sub-8B parameter small language model engineered from scratch in PyTorch to function as a deterministic semantic compiler for public health field operations in resource-constrained environments.
