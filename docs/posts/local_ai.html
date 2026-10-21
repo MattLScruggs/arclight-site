@@ -6,8 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Matt Scruggs, MPH, MSDA">
-<meta name="dcterms.date" content="2026-10-13">
+<meta name="dcterms.date" content="2026-10-17">
 
 <title>The Frontier Fallacy</title>
 <style>
@@ -159,17 +158,11 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Matt Scruggs, MPH, MSDA </p>
-          </div>
-  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 13, 2026</p>
+      <p class="date">October 17, 2026</p>
     </div>
   </div>
   
@@ -183,8 +176,12 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="why-healthcare-doesnt-need-trillion-parameter-models" class="level3">
 <h3 class="anchored" data-anchor-id="why-healthcare-doesnt-need-trillion-parameter-models">Why Healthcare Doesn’t Need Trillion-Parameter Models</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/post1_image.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" alt="Struggling to carry a massive model on his back."></p>
+</figure>
+</div>
 <p>When a health tech organization decides to implement artificial intelligence today, the default instinct is almost always to reach for the biggest cloud-hosted engine on the market. These massive, multi-billion and trillion-parameter frontier systems are engineering marvels, capable of composing sonnets, answering trivia, and simulating natural human banter. Yet when deployed into clinical environments, this broad capability introduces severe operational baggage. Healthcare workflows rarely demand an open-ended conversationalist; they require precise, repetitive execution across structured data tasks. Piped through external cloud APIs, these generalist giants saddle health systems with unpredictable monthly bills, noticeable seconds of network latency, and persistent regulatory anxiety over data exposure and HIPAA compliance. Paying for an ocean of world knowledge when you only need a pipeline to parse medical records is an expensive mismatch.</p>
-<p><img src="../images/post1_image.jpeg" class="img-fluid" style="width:50.0%" alt="Struggling to carry a massive model on his back."></p>
 <p>The path forward is not to abandon modern language processing, but to rethink its scale entirely. Rather than relying on massive cloud models designed to do everything passably well, engineering teams should turn toward small, specialized models featuring architectures under 3 billion parameters, and trained or tuned specifically on biomedical schemas and clinical terminology. Organizations do not need a model that knows 19th-century history to extract a patient’s symptom timeline or parse an unstructured lab intake form. By scoping the model’s linguistic focus strictly to the language of medicine and constraining its output to rigid formats like JSON, a compact engine running locally can easily out-execute a distant supercomputer. The path forward is to treat artificial intelligence like a purpose-built instrument rather than an unconstrained chatbot.</p>
 <p>The business and operational returns of this architectural shift are immediate. Organizations that transition specialized tasks away from commercial cloud endpoints routinely see inferencing costs drop by more than 90%. Because small, specialized models are compact enough to run on dedicated, containerized internal hardware or local machines, per-token billing volatility is replaced with fixed, predictable compute expenses. Latency falls from seconds down to milliseconds, and structured output constraints virtually eliminate the formatting hallucinations common in chatty foundation models. Most importantly, sensitive protected health information never has to leave the local network, entirely eliminating the attack surface and compliance headaches of third-party cloud data transit.</p>
 <p>Right-sizing your model architecture to match task complexity is an engineering and budgetary discipline, not a compromise. For AI systems deployed in healthcare settings,functional, reliable, and secure execution always wins.</p>
