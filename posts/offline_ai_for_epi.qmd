@@ -1,12 +1,10 @@
 ---
 title: "Going Where You Are Needed"
-subtitle: "Why Epidemiology Needs Offline Capability"
+subtitle: "The Necessity for Offline Decision Support for Field Epidemiology"
 date: "10/10/2026"
 format: html
 image: "/images/post2_image.jpg"
 ---
-
-## The Necessity for Offline Decision Support for Field Epidemiology
 
 ![](/images/post2_image.jpg){fig-alt="Field epidemiologist using a local AI system." fig-align="center"}
 
