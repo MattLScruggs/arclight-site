@@ -142,7 +142,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#why-healthcare-doesnt-need-trillion-parameter-models" id="toc-why-healthcare-doesnt-need-trillion-parameter-models" class="nav-link active" data-scroll-target="#why-healthcare-doesnt-need-trillion-parameter-models">Why Healthcare Doesn’t Need Trillion-Parameter Models</a></li>
+  <li><a href="#surgery-needs-scalpels-not-chainsaws" id="toc-surgery-needs-scalpels-not-chainsaws" class="nav-link active" data-scroll-target="#surgery-needs-scalpels-not-chainsaws">Surgery Needs Scalpels, Not Chainsaws</a></li>
   </ul>
 </nav>
     </div>
@@ -152,6 +152,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">The Frontier Fallacy</h1>
+<p class="subtitle lead">Why Healthcare Doesn’t Need Trillion-Parameter Models</p>
 </div>
 
 
@@ -174,14 +175,10 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="why-healthcare-doesnt-need-trillion-parameter-models" class="level3">
-<h3 class="anchored" data-anchor-id="why-healthcare-doesnt-need-trillion-parameter-models">Why Healthcare Doesn’t Need Trillion-Parameter Models</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/post1_image.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" alt="Struggling to carry a massive model on his back."></p>
-</figure>
-</div>
+<p><img src="../images/post1_image.jpeg" class="img-fluid quarto-figure quarto-figure-center" style="width:50.0%" alt="Struggling to carry a massive model on his back."> ### Flying on the World’s Heaviest Airplane</p>
 <p>When a health tech organization decides to implement artificial intelligence today, the default instinct is almost always to reach for the biggest cloud-hosted engine on the market. These massive, multi-billion and trillion-parameter frontier systems are engineering marvels, capable of composing sonnets, answering trivia, and simulating natural human banter. Yet when deployed into clinical environments, this broad capability introduces severe operational baggage. Healthcare workflows rarely demand an open-ended conversationalist; they require precise, repetitive execution across structured data tasks. Piped through external cloud APIs, these generalist giants saddle health systems with unpredictable monthly bills, noticeable seconds of network latency, and persistent regulatory anxiety over data exposure and HIPAA compliance. Paying for an ocean of world knowledge when you only need a pipeline to parse medical records is an expensive mismatch.</p>
+<section id="surgery-needs-scalpels-not-chainsaws" class="level3">
+<h3 class="anchored" data-anchor-id="surgery-needs-scalpels-not-chainsaws">Surgery Needs Scalpels, Not Chainsaws</h3>
 <p>The path forward is not to abandon modern language processing, but to rethink its scale entirely. Rather than relying on massive cloud models designed to do everything passably well, engineering teams should turn toward small, specialized models featuring architectures under 3 billion parameters, and trained or tuned specifically on biomedical schemas and clinical terminology. Organizations do not need a model that knows 19th-century history to extract a patient’s symptom timeline or parse an unstructured lab intake form. By scoping the model’s linguistic focus strictly to the language of medicine and constraining its output to rigid formats like JSON, a compact engine running locally can easily out-execute a distant supercomputer. The path forward is to treat artificial intelligence like a purpose-built instrument rather than an unconstrained chatbot.</p>
 <p>The business and operational returns of this architectural shift are immediate. Organizations that transition specialized tasks away from commercial cloud endpoints routinely see inferencing costs drop by more than 90%. Because small, specialized models are compact enough to run on dedicated, containerized internal hardware or local machines, per-token billing volatility is replaced with fixed, predictable compute expenses. Latency falls from seconds down to milliseconds, and structured output constraints virtually eliminate the formatting hallucinations common in chatty foundation models. Most importantly, sensitive protected health information never has to leave the local network, entirely eliminating the attack surface and compliance headaches of third-party cloud data transit.</p>
 <p>Right-sizing your model architecture to match task complexity is an engineering and budgetary discipline, not a compromise. For AI systems deployed in healthcare settings,functional, reliable, and secure execution always wins.</p>
