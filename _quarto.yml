@@ -12,7 +12,7 @@ website:
       - text: Home
         href: index.qmd
       - text: Essays and Articles
-        href: /posts/local_ai.qmd
+        href: local_ai.qmd
       - text: Arclight-FEBE v1.0 Model Documentation
         href: exec_summary.qmd
     right:

@@ -30,6 +30,6 @@ Cutting-edge foundation models running on massive data centers are financially a
 
 ------------------------------------------------------------------------
 
-[Read the Essay: The Frontier Fallacy](/posts/local_ai.qmd).
+[Read the Essay: The Frontier Fallacy](/local_ai.qmd).
 
 [View the Arclight-FEBE documentation](/exec_summary.qmd).

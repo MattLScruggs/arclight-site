@@ -1,14 +1,12 @@
 [
   {
-    "listing": "/blog.html",
-    "items": [
-      "/posts/local_ai.html"
-    ]
-  },
-  {
     "listing": "/exec_summary.html",
     "items": [
       "/adrs/adr-01.html"
     ]
+  },
+  {
+    "listing": "/blog.html",
+    "items": []
   }
 ]
