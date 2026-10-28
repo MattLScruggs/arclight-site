@@ -2,19 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
-      "/posts/local_ai.html",
-      "/posts/offline_ai_for_epi.html",
-      "/posts/why_epi.html",
-      "/posts/why_arclight.html"
-    ]
-  },
-  {
-    "listing": "/index.html",
-    "items": [
-      "/posts/local_ai.html",
-      "/posts/offline_ai_for_epi.html",
-      "/posts/why_epi.html",
-      "/posts/why_arclight.html"
+      "/posts/local_ai.html"
     ]
   },
   {

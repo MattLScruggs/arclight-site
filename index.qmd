@@ -6,16 +6,30 @@ about:
   template: jolla
   image-width: 25%
   image-shape: rectangle
-listing: 
-    contents: posts
-    sort: "date desc"
-    type: default
 ---
 
-I'm a data science professional that's passionate about using machine learning and artificial intelligence to combat infectious disease. I hold a Master's degree in Public Health, with a post-graduate certification in Epidemiology, as well as a Master's degree in Data Analytics, with a post-graduate certification in Machine Learning.
+I am a data science leader specializing in the intersection of machine learning and infectious disease. By combining a Master of Public Health and Epidemiology with a Master of Science in Data Analytics, I build targeted artificial intelligence systems designed for the realities of field medicine.
 
-Outside of my professional responsibilities, I'm designing Arclight-FEBE, a small language model designed to run locally for use in the epidemiology domain. This model serves as the proof of concept for Arclight, a reference architecture for small language models running locally on edge devices and designed to handle private data for restricted domains or personal use. More about Arclight [here](/posts/why_arclight.qmd), and the Arclight-FEBE implementation [here](/exec_summary.qmd).
-
-### Latest Articles
+Currently, I am developing *Arclight-FEBE*, a proof-of-concept small language model engineered for the epidemiology domain. It serves as the foundation for the broader *Arclight* reference architecture: a framework for deploying local, edge-capable language models that prioritize data privacy, offline functionality, and operational resilience in restricted environments.
 
 ------------------------------------------------------------------------
+
+## The Arclight Thesis
+
+The future of AI belongs to local, private, offline models running on edge devices which are capable of accomplishing 95% of real-world use cases.
+
+### Local AI Follows the Arc of History
+
+We've seen this path before, from the earliest days of digital devices. Computer mainframes were initially tested and experimented with in academic and commercial labs. Computation then spread to enterprise and government end users via centralized mainframes leased or sold to enterprises, with proprietary restrictions. Continued developments and improvements led to personal computers, and, years later, smartphones, following consumer demand for convenience, personalization, privacy, and sovereignty. As devices became more accessible and personal, demand exploded, and led to follow-on technologies like the internet, social media, and an entirely new on-demand digitally enabled economic sector, all of which would be impossible without the move from mainframe to smartphone.
+
+### AI Needs a Sustainable Path Forward
+
+Cutting-edge foundation models running on massive data centers are financially and ecologically unsustainable, and unnecessary for 95% of real-world end uses. Custom-built local AI implementations, tuned for specific end uses, and running on edge devices, are environmentally friendly, require no incremental inference costs, isolate user data by design, and remove vulnerabilities to token cost inflation or changes to terms and services agreements. This design philosophy could increase access and adoption globally, with countless follow-on benefits similar to those seen with the democratization of computation through smartphone proliferation.
+
+#### Arclight is a reference architecture designed to make this dream possible.
+
+------------------------------------------------------------------------
+
+[Read the Essay: The Frontier Fallacy](/posts/local_ai.qmd).
+
+[View the Arclight-FEBE documentation](/exec_summary.qmd).
